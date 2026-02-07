@@ -889,3 +889,36 @@ nav {
         padding-left: 50px;
     }
 }
+
+/* FAQ Section */
+.faq-item {
+    background: var(--white);
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.faq-item h3 {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+}
+
+.faq-item p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .faq-item {
+        padding: 1.25rem;
+    }
+
+    .faq-item h3 {
+        font-size: 1rem;
+    }
+}

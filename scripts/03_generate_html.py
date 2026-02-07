@@ -85,48 +85,147 @@ def get_h1_text(city_name, city_index):
     return h1_variants[city_index % 3]
 
 
+def get_city_profile(city):
+    """
+    Classifie les villes en 6 profils basés sur leurs caractéristiques.
+
+    Profils:
+    A - Metropoli: grandes villes > 100k habitants
+    B - Polo industriale: forte présence industrielle
+    C - Centro commerciale: forte présence commerciale
+    D - Residenziale: principalement résidentiel
+    E - Turistico: indicateurs touristiques
+    F - Capoluogo: chef-lieu de province
+    """
+    population = city.get("population", 0)
+    province = city.get("province", "")
+    name = city.get("name", "")
+
+    # Données industrielles
+    industry = city.get("industry", {})
+    industrial_zones = industry.get("industrial_zones_count", 0)
+    industrial_area = industry.get("industrial_area_hectares", 0)
+    commercial_zones = industry.get("commercial_zones_count", 0)
+    malls = industry.get("malls_count", 0)
+
+    # POIs
+    pois = city.get("pois", {})
+    hotels = pois.get("hotels_count", 0)
+
+    # Liste des chefs-lieux de province lombards
+    capoluoghi = [
+        "Milano", "Brescia", "Bergamo", "Como", "Cremona", "Lecco",
+        "Lodi", "Mantova", "Monza", "Pavia", "Sondrio", "Varese"
+    ]
+
+    # Profil A - Metropoli
+    if population > 100000:
+        return "A", "Metropoli"
+
+    # Profil B - Polo industriale
+    if industrial_zones > 100 or industrial_area > 300:
+        return "B", "Polo industriale"
+
+    # Profil C - Centro commerciale
+    if commercial_zones > 30 or malls > 3:
+        return "C", "Centro commerciale"
+
+    # Profil F - Capoluogo
+    if name in capoluoghi:
+        return "F", "Capoluogo"
+
+    # Profil E - Turistico
+    if hotels > 10:
+        return "E", "Turistico"
+
+    # Profil D - Residenziale (par défaut)
+    return "D", "Residenziale"
+
+
 def generate_unique_city_content(city):
-    """Génère un contenu unique pour chaque ville basé sur ses données."""
+    """Génère un contenu unique pour chaque ville basé sur son profil."""
     city_name = city.get("name", "")
     province = city.get("province", "")
     population = city.get("population", 0)
+
+    # Obtenir le profil de la ville
+    profile_code, profile_name = get_city_profile(city)
+
+    # Données disponibles
     has_pois = bool(city.get("pois"))
     parking_count = city.get("pois", {}).get("parking_count", 0) if has_pois else 0
     ev_stations = city.get("pois", {}).get("ev_charging_stations", 0) if has_pois else 0
 
-    # Titre H2 unique basé sur les caractéristiques de la ville
-    if population > 100000:
-        h2 = f"Pensiline Fotovoltaiche per Grandi Aziende a {city_name}"
-        intro = f"{city_name}, con oltre {population:,} abitanti, è un polo industriale importante della provincia di {province}. "
-        intro += "Le grandi aziende locali possono ridurre significativamente i costi energetici installando tettoie fotovoltaiche sui parcheggi dipendenti. "
-    elif population > 50000:
-        h2 = f"Installazione Tettoie Fotovoltaiche per PMI a {city_name}"
-        intro = f"A {city_name} ({province}), molte PMI stanno investendo in soluzioni di energia rinnovabile. "
-        intro += "Le pensiline fotovoltaiche TOSSO® rappresentano un investimento intelligente per ridurre le bollette energetiche e valorizzare gli spazi esterni. "
-    else:
-        h2 = f"Parcheggi Fotovoltaici per Aziende a {city_name}"
-        intro = f"Anche le aziende di {city_name} possono beneficiare dell'energia solare. "
-        intro += "Installare una tettoia fotovoltaica sul parcheggio aziendale significa produrre energia pulita e proteggere i veicoli dalle intemperie. "
+    industry = city.get("industry", {})
+    industrial_zones = industry.get("industrial_zones_count", 0)
+    industrial_area = industry.get("industrial_area_hectares", 0)
+    surface_parking = industry.get("surface_parking_count", 0)
 
-    # Contenu basé sur les POIs disponibles
-    if has_pois and parking_count > 0:
-        intro += f"La città conta {parking_count} parcheggi censiti, molti dei quali potrebbero essere convertiti in impianti di produzione solare. "
+    # Contenu adapté par profil
+    if profile_code == "A":  # Metropoli
+        h2 = f"Tettoie Fotovoltaiche per Grandi Aziende a {city_name}"
+        intro = f"{city_name}, metropoli lombarda con {population:,} abitanti, concentra numerose aziende e sedi direzionali. "
+        intro += "I vasti parcheggi aziendali rappresentano un'opportunità unica per installare tettoie fotovoltaiche TOSSO® "
+        intro += "e produrre energia rinnovabile su larga scala. "
+
+    elif profile_code == "B":  # Polo industriale
+        h2 = f"Pensiline Fotovoltaiche per Aziende Industriali a {city_name}"
+        intro = f"{city_name} è un importante polo industriale della provincia di {province}"
+        if industrial_zones > 0:
+            intro += f", con {industrial_zones} zone industriali censite"
+        intro += ". "
+        intro += "Le aziende manifatturiere e logistiche possono ridurre drasticamente i costi energetici "
+        intro += "coprendo i parcheggi e le aree operative con tettoie fotovoltaiche ad alta efficienza. "
+
+    elif profile_code == "C":  # Centro commerciale
+        h2 = f"Pensiline Fotovoltaiche per Centri Commerciali a {city_name}"
+        intro = f"{city_name} dispone di un tessuto commerciale dinamico. "
+        intro += "Centri commerciali, supermercati e aziende del terziario possono valorizzare i propri parcheggi "
+        intro += "installando pensiline fotovoltaiche che producono energia e offrono riparo ai clienti. "
+
+    elif profile_code == "E":  # Turistico
+        h2 = f"Tettoie Fotovoltaiche per Strutture Turistiche a {city_name}"
+        intro = f"{city_name}, con la sua vocazione turistica, può beneficiare di pensiline fotovoltaiche "
+        intro += "per hotel, ristoranti e strutture ricettive. Un investimento che riduce i costi energetici "
+        intro += "e rafforza l'immagine green dell'attività. "
+
+    elif profile_code == "F":  # Capoluogo
+        h2 = f"Pensiline Fotovoltaiche a {city_name}, Capoluogo di Provincia"
+        intro = f"{city_name}, capoluogo di provincia, riunisce enti pubblici, aziende e PMI. "
+        intro += "Le tettoie fotovoltaiche TOSSO® sono ideali per parcheggi aziendali, sedi comunali, "
+        intro += "e strutture sanitarie che vogliono investire in energie rinnovabili. "
+
+    else:  # D - Residenziale
+        h2 = f"Parcheggi Fotovoltaici per Aziende e PMI a {city_name}"
+        intro = f"A {city_name} ({province}), le aziende locali possono beneficiare dell'energia solare. "
+        intro += "Installare una tettoia fotovoltaica sul parcheggio aziendale significa produrre energia pulita, "
+        intro += "proteggere i veicoli e ridurre le bollette energetiche. "
+
+    # Compléter l'intro avec les données disponibles
+    if surface_parking > 0 and industrial_zones > 0:
+        intro += f"Il territorio conta {surface_parking} parcheggi di superficie, "
+        intro += "molti dei quali potrebbero essere trasformati in impianti fotovoltaici. "
 
     if has_pois and ev_stations > 0:
-        intro += f"Con {ev_stations} punti di ricarica già presenti, {city_name} mostra una crescente attenzione alla mobilità elettrica. "
-        intro += "Le nostre tettoie fotovoltaiche integrano colonnine di ricarica EV direttamente nella struttura. "
-    else:
-        intro += "Rossini Energy può installare pensiline fotovoltaiche con colonnine di ricarica integrate, preparando la tua azienda al futuro della mobilità elettrica. "
+        intro += f"Con {ev_stations} punti di ricarica EV già presenti, {city_name} dimostra "
+        intro += "attenzione alla mobilità elettrica. Le nostre tettoie integrano colonnine di ricarica. "
 
-    # Avantages spécifiques
-    benefits = "I vantaggi per la tua azienda: produzione di energia solare autoconsumata, riduzione dei costi energetici fino al 70%, "
-    benefits += "protezione dei veicoli dipendenti, valorizzazione dell'immagine aziendale green, "
-    benefits += "e possibilità di ricarica veicoli elettrici direttamente sul posto di lavoro."
+    # Avantages personnalisés
+    benefits = "I vantaggi per la tua azienda: produzione di energia solare autoconsumata, "
+    benefits += "riduzione dei costi energetici fino al 70%, protezione dei veicoli, "
+    benefits += "valorizzazione dell'immagine aziendale green"
+
+    if profile_code in ["A", "B"]:
+        benefits += ", e possibilità di vendere l'energia in eccesso alla rete."
+    else:
+        benefits += ", e accesso agli incentivi fiscali per le energie rinnovabili."
 
     return {
         "h2": h2,
         "intro": intro,
-        "benefits": benefits
+        "benefits": benefits,
+        "profile": profile_code,
+        "profile_name": profile_name
     }
 
 

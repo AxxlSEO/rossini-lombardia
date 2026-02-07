@@ -331,6 +331,105 @@
         </div>
     </section>
 
+    <!-- FAQ spécifique par profil de ville -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Domande Frequenti — Tettoie Fotovoltaiche a {{ city.name }}</h2>
+
+            {% if unique_content.profile == "A" %}
+            <!-- FAQ Metropoli -->
+            <div class="faq-item">
+                <h3>🏢 Quanto spazio serve per installare una tettoia fotovoltaica in una grande azienda?</h3>
+                <p>Per un'azienda con 50+ dipendenti a {{ city.name }}, consigliamo una struttura da 30-50 kWp che copre circa 200-300 m² di parcheggio. Rossini Energy progetta soluzioni modulari che si adattano allo spazio disponibile.</p>
+            </div>
+            <div class="faq-item">
+                <h3>💰 Quali sono i tempi di ritorno dell'investimento?</h3>
+                <p>Con i prezzi energetici attuali e gli incentivi fiscali (credito d'imposta 6%), il ROI medio è di 6-8 anni. L'autoconsumo energetico riduce le bollette fino al 70%.</p>
+            </div>
+            <div class="faq-item">
+                <h3>🔌 Posso integrare colonnine di ricarica per auto aziendali?</h3>
+                <p>Assolutamente. Le nostre tettoie includono predisposizione per colonnine EV da 7-22 kW, alimentate direttamente dall'impianto fotovoltaico.</p>
+            </div>
+
+            {% elif unique_content.profile == "B" %}
+            <!-- FAQ Polo industriale -->
+            <div class="faq-item">
+                <h3>🏭 Le tettoie resistono alle sollecitazioni di un'area industriale?</h3>
+                <p>Sì, le strutture TOSSO® sono progettate in legno lamellare Douglas classe GL24h, con certificazione statica per neve e vento. Ideali per zone industriali di {{ city.name }}.</p>
+            </div>
+            <div class="faq-item">
+                <h3>⚡ Posso alimentare macchinari industriali con l'energia prodotta?</h3>
+                <p>Certamente. L'energia autoconsumata riduce drasticamente i costi operativi. Per aziende energivore, possiamo dimensionare impianti fino a 100 kWp.</p>
+            </div>
+            <div class="faq-item">
+                <h3>📋 Servono permessi edilizi speciali?</h3>
+                <p>In genere basta una CILA (Comunicazione di Inizio Lavori Asseverata). Rossini Energy gestisce tutta la pratica burocratica per voi.</p>
+            </div>
+
+            {% elif unique_content.profile == "C" %}
+            <!-- FAQ Centro commerciale -->
+            <div class="faq-item">
+                <h3>🛒 Come valorizzano il parcheggio di un centro commerciale?</h3>
+                <p>Le pensiline fotovoltaiche offrono riparo ai clienti, riducono la temperatura estiva delle auto (+15°C in meno), e proiettano un'immagine green del vostro brand.</p>
+            </div>
+            <div class="faq-item">
+                <h3>💡 Posso usare l'energia prodotta per l'illuminazione notturna?</h3>
+                <p>Sì, con un sistema di accumulo (batterie) o tramite lo scambio sul posto. A {{ city.name }}, molte attività commerciali beneficiano di questa soluzione.</p>
+            </div>
+            <div class="faq-item">
+                <h3>🚗 Posso offrire ricarica EV gratuita ai clienti?</h3>
+                <p>Assolutamente. Molti centri commerciali installano colonnine gratuite per fidelizzare i clienti. L'energia viene prodotta dal vostro impianto.</p>
+            </div>
+
+            {% elif unique_content.profile == "E" %}
+            <!-- FAQ Turistico -->
+            <div class="faq-item">
+                <h3>🏨 Una struttura turistica può beneficiare di incentivi specifici?</h3>
+                <p>Sì, le strutture ricettive a {{ city.name }} possono accedere al credito d'imposta del 6% per interventi di efficientamento energetico.</p>
+            </div>
+            <div class="faq-item">
+                <h3>🌱 Come comunicare l'impegno ecologico agli ospiti?</h3>
+                <p>Le pensiline fotovoltaiche sono visibili e comunicano immediatamente la vostra scelta green. Molti ospiti apprezzano hotel e ristoranti sostenibili.</p>
+            </div>
+            <div class="faq-item">
+                <h3>⚡ L'energia prodotta copre il fabbisogno di un hotel?</h3>
+                <p>Dipende dalla dimensione. Un impianto da 30 kWp produce circa 36.000 kWh/anno, sufficiente per coprire 40-60% del fabbisogno di una struttura media.</p>
+            </div>
+
+            {% elif unique_content.profile == "F" %}
+            <!-- FAQ Capoluogo -->
+            <div class="faq-item">
+                <h3>🏛️ Anche enti pubblici possono installare tettoie fotovoltaiche?</h3>
+                <p>Assolutamente. A {{ city.name }}, molte sedi comunali, scuole e ASL stanno investendo in energia rinnovabile. Rossini Energy lavora con procedure di gara pubblica.</p>
+            </div>
+            <div class="faq-item">
+                <h3>📊 Quanto produce un impianto fotovoltaico a {{ city.name }}?</h3>
+                <p>Un sistema da 30 kWp produce circa 36.000 kWh/anno nella provincia di {{ city.province }}, con un risparmio medio di 18.000-20.000€/anno sulle bollette.</p>
+            </div>
+            <div class="faq-item">
+                <h3>🔧 Chi si occupa della manutenzione?</h3>
+                <p>Rossini Energy offre contratti di manutenzione pluriennali con monitoraggio remoto dell'impianto e interventi programmati.</p>
+            </div>
+
+            {% else %}
+            <!-- FAQ Residenziale/Default -->
+            <div class="faq-item">
+                <h3>💼 Anche una piccola azienda può permettersi una tettoia fotovoltaica?</h3>
+                <p>Sì! A {{ city.name }}, anche PMI con 10-20 dipendenti possono installare una pensilina fotovoltaica da 10-15 kWp. L'investimento si ammortizza in 7-9 anni.</p>
+            </div>
+            <div class="faq-item">
+                <h3>🌞 Quanto produce un impianto fotovoltaico a {{ city.name }}?</h3>
+                <p>In provincia di {{ city.province }}, un sistema da 30 kWp produce mediamente 36.000 kWh/anno, sufficiente per alimentare un'azienda di medie dimensioni.</p>
+            </div>
+            <div class="faq-item">
+                <h3>⏱️ Quanto tempo serve per l'installazione?</h3>
+                <p>Dalla firma del contratto all'attivazione: 8-12 settimane. Rossini Energy gestisce progettazione, permessi, installazione e allaccio alla rete.</p>
+            </div>
+            {% endif %}
+
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
