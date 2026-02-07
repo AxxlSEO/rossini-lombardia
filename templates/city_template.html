@@ -248,7 +248,7 @@
     {% endif %}
 
     <!-- POIs / Infrastrutture -->
-    {% if city.pois %}
+    {% if city.pois and city.pois.ev_charging_stations > 0 %}
     <section class="section section-alt">
         <div class="container">
             <h2>Infrastrutture di Ricarica a {{ city.name }}</h2>
