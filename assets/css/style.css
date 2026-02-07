@@ -1,0 +1,411 @@
+/* === Rossini Energy — Local SEO Lombardia === */
+
+:root {
+    --primary: #1B6B3A;
+    --primary-dark: #134D2A;
+    --primary-light: #2A9D5C;
+    --accent: #E8A838;
+    --accent-dark: #C48B20;
+    --dark: #0A192F;
+    --dark-light: #172A45;
+    --text: #334155;
+    --text-light: #64748B;
+    --bg: #FAFBFC;
+    --bg-alt: #F0F4F3;
+    --white: #FFFFFF;
+    --border: #E2E8F0;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1), 0 12px 32px rgba(0,0,0,0.06);
+    --radius: 12px;
+    --radius-sm: 8px;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* === Typography === */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--dark);
+    line-height: 1.25;
+}
+h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
+h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+p { margin-bottom: 1rem; }
+strong { color: var(--dark); }
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+a:hover { color: var(--primary-light); }
+
+/* === Header === */
+.header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.95);
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--dark);
+}
+.logo:hover { color: var(--primary); }
+.logo-icon { font-size: 1.5rem; }
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.nav a { font-weight: 500; color: var(--text); }
+.nav a:hover { color: var(--primary); }
+
+/* === Buttons === */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 24px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+.btn-primary:hover {
+    background: var(--primary-dark);
+    color: var(--white);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+.btn-secondary {
+    background: var(--white);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+.btn-secondary:hover {
+    background: var(--bg-alt);
+    color: var(--primary-dark);
+}
+.btn-lg {
+    padding: 14px 32px;
+    font-size: 1.05rem;
+}
+
+/* === Hero === */
+.hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 5rem 0 4rem;
+}
+.hero-index {
+    text-align: center;
+    padding: 6rem 0 5rem;
+}
+.hero h1 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+.hero h1 strong {
+    color: var(--accent);
+}
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 640px;
+    margin-bottom: 2rem;
+}
+.hero-index .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === Breadcrumb === */
+.breadcrumb {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+}
+.breadcrumb a { color: rgba(255,255,255,0.7); }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb span { margin: 0 6px; }
+
+/* === Sections === */
+.section {
+    padding: 4rem 0;
+}
+.section-alt {
+    background: var(--bg-alt);
+}
+.section-cta {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 0;
+}
+.section-cta h2 { color: var(--white); }
+.section-cta p { color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto 2rem; }
+
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.section-cta .btn-primary {
+    background: var(--accent);
+    color: var(--dark);
+}
+.section-cta .btn-primary:hover {
+    background: var(--accent-dark);
+}
+.section-cta .btn-secondary {
+    border-color: var(--white);
+    color: var(--white);
+}
+.section-cta .btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* === Grid Layouts === */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: start;
+}
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* === Info Card === */
+.info-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+.info-card h3 {
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--bg-alt);
+}
+
+.stats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--bg-alt);
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-row dt { color: var(--text-light); font-size: 0.95rem; }
+.stat-row dd { font-weight: 600; color: var(--dark); }
+
+/* === Service Cards === */
+.service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* === Climate Cards === */
+.climate-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+.climate-value {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: 'Playfair Display', serif;
+}
+.climate-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+/* === Nearby Cities === */
+.nearby-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.nearby-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 1.2rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+}
+.nearby-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+.nearby-card strong { color: var(--dark); }
+.nearby-card span { font-size: 0.85rem; color: var(--text-light); }
+
+/* === Cities Index Grid === */
+.province-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 2rem;
+}
+.filter-btn {
+    padding: 8px 18px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    background: var(--white);
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+}
+.filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+.filter-btn.active {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+.city-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+}
+.city-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+.city-card h3 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    font-size: 1.05rem;
+}
+.city-meta {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* === Footer === */
+.footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.7);
+    padding: 3rem 0 2rem;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer strong { color: var(--white); display: block; margin-bottom: 0.5rem; }
+.footer a { color: rgba(255,255,255,0.7); }
+.footer a:hover { color: var(--accent); }
+.footer-bottom { text-align: center; font-size: 0.85rem; }
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .nearby-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero { padding: 3rem 0 2.5rem; }
+    .section { padding: 3rem 0; }
+    .nav { gap: 12px; }
+    .nav a:not(.btn) { display: none; }
+}
