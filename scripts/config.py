@@ -1,7 +1,7 @@
 # === Configuration ===
 
 # Domaine de production (modifier pour le déploiement)
-DOMAIN = "https://rossinienergy.it"
+DOMAIN = "https://lombardia.rossinienergy.it"
 
 # GeoNames username (créer un compte gratuit sur geonames.org)
 GEONAMES_USERNAME = "YOUR_USERNAME"

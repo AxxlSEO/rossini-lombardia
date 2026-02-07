@@ -208,8 +208,8 @@ def main():
         time.sleep(0.3)
 
         # 4. POIs (attention au rate limit Overpass)
-        city = enrich_pois(city)
-        time.sleep(2)  # Overpass demande du fair-use
+        # city = enrich_pois(city)
+        # time.sleep(2)  # Overpass demande du fair-use
 
         cities[i] = city
 
