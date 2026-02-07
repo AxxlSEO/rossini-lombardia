@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <script type="application/ld+json">
@@ -35,29 +36,13 @@
 </head>
 <body>
 
-    <header class="header">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="{{ company.logo }}" alt="Rossini Energy">
-                <span class="logo-mobile"><img src="{{ company.logo_mobile }}" alt="Rossini Energy"></span>
-            </a>
-            <nav class="nav">
-                <a href="https://rossinienergy.it/colonnina-di-ricarica/">Prodotti</a>
-                <a href="https://rossinienergy.it/le-nostre-referenze/">Le nostre installazioni</a>
-                <a href="https://rossinienergy.it/chi-siamo/">Chi siamo?</a>
-                <a href="https://rossinienergy.it/notizie/">Notizie</a>
-                <a href="https://rossinienergy.it/contact/">Contact</a>
-                <a href="{{ company.rdv_url }}" class="btn btn-primary" target="_blank" rel="noopener">Fissare un appuntamento</a>
-            </nav>
-        </div>
-    </header>
 
     <section class="hero hero-index">
         <div class="container">
-            <h1>Colonnine di Ricarica e Pensiline Fotovoltaiche in <strong>Lombardia</strong></h1>
+            <h1>Colonnine di Ricarica e Pensiline Fotovoltaiche in <strong style="color: #ff0000;">Lombardia</strong></h1>
             <p class="hero-subtitle">
                 Rossini Energy installa soluzioni di ricarica per veicoli elettrici e carport solari in
-                <strong>{{ cities|length }}</strong> città della Lombardia.
+                <strong style="color: #ff0000;">{{ cities|length }}</strong> città della Lombardia.
             </p>
         </div>
     </section>
@@ -148,6 +133,48 @@
             const province = btn.dataset.province;
             document.querySelectorAll('.city-card').forEach(card => {
                 card.style.display = (province === 'all' || card.dataset.province === province) ? '' : 'none';
+            });
+        });
+    });
+    </script>
+
+    <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const burger = document.querySelector('.burger-menu');
+        const nav = document.querySelector('nav');
+        const body = document.body;
+
+        if (burger) {
+            burger.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                burger.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('nav') && !e.target.closest('.burger-menu') && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                burger.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+        });
+
+        // Submenu toggle for touch devices
+        const menuItemsWithChildren = document.querySelectorAll('.menu-item-has-children > a');
+        menuItemsWithChildren.forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    parent.classList.toggle('open');
+                    const submenu = parent.querySelector('.sub-menu');
+                    if (submenu) {
+                        submenu.style.display = parent.classList.contains('open') ? 'block' : 'none';
+                    }
+                }
             });
         });
     });
