@@ -10,15 +10,17 @@ GEONAMES_USERNAME = "YOUR_USERNAME"
 COMPANY = {
     "name": "Rossini Energy",
     "legal_name": "Rossini Energy SAS",
-    "url": "https://rossinienergy.com",
-    "phone": "+33 (0)3 74 09 01 05",
-    "email": "info@rossinienergy.com",
-    "logo": "https://rossinienergy.com/logo.png",
+    "url": "https://rossinienergy.it",
+    "phone": "+39 351 591 0020",
+    "email": "commerciale@rossinienergy.com",
+    "logo": "https://rossinienergy.it/wp-content/uploads/2022/01/cropped-logo.png",
+    "logo_mobile": "https://rossinienergy.it/wp-content/uploads/2020/09/Logo_Mobile-02.png",
+    "rdv_url": "https://meetings.hubspot.com/arata-lorenzo",
     "address_it": {
-        "street": "Piazza Torre Sacchetti, 73",
-        "city": "Stradella",
+        "street": "Via Dante Alighieri 10",
+        "city": "Corvino San Quirico",
         "province": "PV",
-        "postal_code": "27049",
+        "postal_code": "27050",
         "country": "IT"
     },
     "services": [

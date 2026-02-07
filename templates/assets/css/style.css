@@ -1,0 +1,567 @@
+/* === Rossini Energy — Design officiel === */
+
+:root {
+    --black: #1a1a1a;
+    --dark-bg: #222222;
+    --green-cta: #7ab648;
+    --green-hover: #6aa33d;
+    --white: #ffffff;
+    --text-light: #cccccc;
+    --bg-light: #f5f5f5;
+    --border: #e0e0e0;
+    --shadow: 0 2px 8px rgba(0,0,0,0.1);
+    --shadow-lg: 0 4px 16px rgba(0,0,0,0.15);
+    --radius: 4px;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', -apple-system, sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* === Typography === */
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--black);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-style: italic;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-style: italic;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+strong {
+    font-weight: 600;
+    color: var(--black);
+}
+
+a {
+    color: var(--green-cta);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--green-hover);
+}
+
+/* === Header === */
+.header {
+    background: var(--black);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-mobile {
+    display: none;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav a {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--green-cta);
+}
+
+/* === Buttons === */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--green-cta);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--green-hover);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(122, 182, 72, 0.3);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--black);
+    border: 2px solid var(--black);
+}
+
+.btn-secondary:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+.btn-lg {
+    padding: 16px 36px;
+    font-size: 1.05rem;
+}
+
+/* === Hero === */
+.hero {
+    background: var(--black);
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 5rem 0 4rem;
+}
+
+.hero-index {
+    text-align: center;
+    padding: 6rem 0 5rem;
+}
+
+.hero h1 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 strong {
+    color: var(--green-cta);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.hero-index .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === Breadcrumb === */
+.breadcrumb {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.breadcrumb a {
+    color: var(--text-light);
+}
+
+.breadcrumb a:hover {
+    color: var(--green-cta);
+}
+
+.breadcrumb span {
+    margin: 0 8px;
+}
+
+/* === Sections === */
+.section {
+    padding: 4rem 0;
+}
+
+.section-alt {
+    background: var(--bg-light);
+}
+
+.section-cta {
+    background: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.section-cta h2 {
+    color: var(--white);
+}
+
+.section-cta p {
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* === Grid Layouts === */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* === Info Card === */
+.info-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.info-card h3 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--bg-light);
+    font-style: normal;
+}
+
+.stats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--bg-light);
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-row dt {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.stat-row dd {
+    font-weight: 600;
+    color: var(--black);
+}
+
+/* === Service Cards === */
+.service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-style: normal;
+}
+
+/* === Climate Cards === */
+.climate-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.climate-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--green-cta);
+    font-family: 'Poppins', sans-serif;
+}
+
+.climate-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* === Nearby Cities === */
+.nearby-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.nearby-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 1.2rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all 0.3s;
+}
+
+.nearby-card:hover {
+    border-color: var(--green-cta);
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+
+.nearby-card strong {
+    color: var(--black);
+}
+
+.nearby-card span {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* === Cities Index Grid === */
+.province-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    background: var(--white);
+    color: var(--black);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.filter-btn:hover {
+    border-color: var(--green-cta);
+    color: var(--green-cta);
+}
+
+.filter-btn.active {
+    background: var(--green-cta);
+    color: var(--white);
+    border-color: var(--green-cta);
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.city-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all 0.3s;
+}
+
+.city-card:hover {
+    border-color: var(--green-cta);
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+
+.city-card h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--black);
+    font-size: 1.1rem;
+    font-style: normal;
+}
+
+.city-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* === Footer === */
+.footer {
+    background: var(--black);
+    color: var(--text-light);
+    padding: 3rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #333;
+}
+
+.footer strong {
+    color: var(--white);
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer a {
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer a:hover {
+    color: var(--green-cta);
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .nearby-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        display: none;
+    }
+
+    .logo-mobile {
+        display: block;
+    }
+
+    .logo-mobile img {
+        height: 40px;
+    }
+
+    .nav {
+        gap: 15px;
+    }
+
+    .nav a:not(.btn) {
+        display: none;
+    }
+
+    .hero {
+        padding: 3rem 0 2.5rem;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -14,7 +14,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <script type="application/ld+json">
@@ -38,12 +38,16 @@
     <header class="header">
         <div class="container">
             <a href="index.html" class="logo">
-                <span class="logo-icon">⚡</span>
-                <span class="logo-text">Rossini Energy</span>
+                <img src="{{ company.logo }}" alt="Rossini Energy">
+                <span class="logo-mobile"><img src="{{ company.logo_mobile }}" alt="Rossini Energy"></span>
             </a>
             <nav class="nav">
-                <a href="{{ company.url }}" target="_blank" rel="noopener">Chi siamo</a>
-                <a href="mailto:{{ company.email }}" class="btn btn-primary">Contattaci</a>
+                <a href="https://rossinienergy.it/colonnina-di-ricarica/">Prodotti</a>
+                <a href="https://rossinienergy.it/le-nostre-referenze/">Le nostre installazioni</a>
+                <a href="https://rossinienergy.it/chi-siamo/">Chi siamo?</a>
+                <a href="https://rossinienergy.it/notizie/">Notizie</a>
+                <a href="https://rossinienergy.it/contact/">Contact</a>
+                <a href="{{ company.rdv_url }}" class="btn btn-primary" target="_blank" rel="noopener">Fissare un appuntamento</a>
             </nav>
         </div>
     </header>
@@ -85,10 +89,11 @@
 
     <section class="section section-cta">
         <div class="container">
-            <h2>Contattaci</h2>
-            <p>Interessati alle nostre soluzioni di ricarica EV e energia solare? Contattateci per un preventivo gratuito.</p>
+            <h2>Richiedi un preventivo gratuito</h2>
+            <p>Interessati alle nostre soluzioni di ricarica EV e energia solare in Lombardia? Contattaci per un preventivo personalizzato e gratuito.</p>
             <div class="cta-buttons">
-                <a href="tel:{{ company.phone.replace(' ', '').replace('(', '').replace(')', '') }}" class="btn btn-primary btn-lg">📞 {{ company.phone }}</a>
+                <a href="{{ company.rdv_url }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">📅 Fissare un appuntamento</a>
+                <a href="tel:{{ company.phone.replace(' ', '') }}" class="btn btn-secondary btn-lg">📞 {{ company.phone }}</a>
                 <a href="mailto:{{ company.email }}" class="btn btn-secondary btn-lg">✉️ {{ company.email }}</a>
             </div>
         </div>
@@ -96,8 +101,40 @@
 
     <footer class="footer">
         <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <strong>Rossini Energy</strong>
+                    <p>
+                        {{ company.address_it.street }}<br>
+                        {{ company.address_it.postal_code }} {{ company.address_it.city }} ({{ company.address_it.province }})<br>
+                        Italia
+                    </p>
+                    <p>
+                        Tel: <a href="tel:{{ company.phone.replace(' ', '') }}">{{ company.phone }}</a><br>
+                        Email: <a href="mailto:{{ company.email }}">{{ company.email }}</a>
+                    </p>
+                </div>
+                <div>
+                    <strong>Menu</strong>
+                    <nav class="footer-nav">
+                        <a href="https://rossinienergy.it/colonnina-di-ricarica/">Prodotti</a>
+                        <a href="https://rossinienergy.it/le-nostre-referenze/">Le nostre installazioni</a>
+                        <a href="https://rossinienergy.it/chi-siamo/">Chi siamo?</a>
+                        <a href="https://rossinienergy.it/notizie/">Notizie</a>
+                        <a href="https://rossinienergy.it/contact/">Contact</a>
+                        <a href="index.html">Tutte le città in Lombardia</a>
+                    </nav>
+                </div>
+                <div>
+                    <strong>Informazioni</strong>
+                    <nav class="footer-nav">
+                        <a href="https://rossinienergy.it/informativa-sulla-privacy/" target="_blank" rel="noopener">Informativa sulla privacy</a>
+                        <a href="{{ company.rdv_url }}" target="_blank" rel="noopener">Prenota un appuntamento</a>
+                    </nav>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <p>© {{ year }} Rossini Energy — Colonnine di ricarica e pensiline fotovoltaiche in Lombardia</p>
+                <p>© {{ year }} rossinienergy.it — Colonnine di ricarica e pensiline fotovoltaiche in Lombardia</p>
             </div>
         </div>
     </footer>
