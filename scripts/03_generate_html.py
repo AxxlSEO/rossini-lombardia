@@ -20,6 +20,47 @@ except ImportError:
     sys.exit(1)
 
 
+def normalize_province(province_raw):
+    """
+    Normalise le nom de province pour éviter duplication de 'provincia di'.
+    Si la province contient déjà 'provincia di', la retourne telle quelle.
+    Sinon, retourne juste le nom sans préfixe.
+    """
+    if not province_raw or not province_raw.strip():
+        return ""
+
+    province = province_raw.strip()
+
+    # Si déjà préfixé avec "provincia di", retourner tel quel
+    if province.startswith("provincia di ") or province.startswith("Provincia di "):
+        return province
+
+    # Sinon, retourner sans préfixe (sera ajouté dans le template si nécessaire)
+    return province
+
+
+def fix_image_url(image_url):
+    """
+    Convertit les URLs Wikimedia Commons en URLs HTTPS directes.
+    commons.wikimedia.org/wiki/Special:FilePath/ → upload.wikimedia.org
+    """
+    if not image_url:
+        return ""
+
+    # Convertir HTTP en HTTPS
+    image_url = image_url.replace("http://", "https://")
+
+    # Convertir les URLs Special:FilePath en URLs directes
+    if "commons.wikimedia.org/wiki/Special:FilePath/" in image_url:
+        # Extraire le nom du fichier
+        filename = image_url.split("/Special:FilePath/")[-1]
+        # Retourner l'URL directe (upload.wikimedia.org nécessite un hash MD5,
+        # mais on peut garder l'URL FilePath en HTTPS qui redirige correctement)
+        return f"https://commons.wikimedia.org/wiki/Special:FilePath/{filename}"
+
+    return image_url
+
+
 def haversine_distance(lat1, lon1, lat2, lon2):
     """Distance en km entre deux points GPS."""
     R = 6371
@@ -118,9 +159,20 @@ def get_city_profile(city):
         "Lodi", "Mantova", "Monza", "Pavia", "Sondrio", "Varese"
     ]
 
+    # Villes touristiques connues (Lac de Garde, Lac de Côme, etc.)
+    tourist_cities = [
+        "Desenzano del Garda", "Salò", "Lonato del Garda",
+        "Sirmione", "Limone sul Garda", "Gardone Riviera",
+        "Bellagio", "Menaggio", "Varenna", "Tremezzina"
+    ]
+
     # Profil A - Metropoli
     if population > 100000:
         return "A", "Metropoli"
+
+    # Profil E - Turistico (vérifier avant industriel/commercial)
+    if name in tourist_cities or hotels > 10:
+        return "E", "Turistico"
 
     # Profil B - Polo industriale
     if industrial_zones > 100 or industrial_area > 300:
@@ -134,10 +186,6 @@ def get_city_profile(city):
     if name in capoluoghi:
         return "F", "Capoluogo"
 
-    # Profil E - Turistico
-    if hotels > 10:
-        return "E", "Turistico"
-
     # Profil D - Residenziale (par défaut)
     return "D", "Residenziale"
 
@@ -145,8 +193,13 @@ def get_city_profile(city):
 def generate_unique_city_content(city):
     """Génère un contenu unique pour chaque ville basé sur son profil."""
     city_name = city.get("name", "")
-    province = city.get("province", "")
+    province_raw = city.get("province", "")
     population = city.get("population", 0)
+
+    # Normaliser la province pour éviter les duplications
+    province = normalize_province(province_raw)
+    # Extraire juste le nom de la province sans "provincia di"
+    province_name_only = province.replace("provincia di ", "").replace("Provincia di ", "") if province else ""
 
     # Obtenir le profil de la ville
     profile_code, profile_name = get_city_profile(city)
@@ -170,7 +223,9 @@ def generate_unique_city_content(city):
 
     elif profile_code == "B":  # Polo industriale
         h2 = f"Pensiline Fotovoltaiche per Aziende Industriali a {city_name}"
-        intro = f"{city_name} è un importante polo industriale della provincia di {province}"
+        intro = f"{city_name} è un importante polo industriale"
+        if province_name_only:
+            intro += f" della provincia di {province_name_only}"
         if industrial_zones > 0:
             intro += f", con {industrial_zones} zone industriali censite"
         intro += ". "
@@ -260,9 +315,15 @@ def main():
     for i, city in enumerate(cities):
         nearby = find_nearby_cities(city, cities)
 
+        # Normaliser la province
+        province_normalized = normalize_province(city.get("province", ""))
+
+        # Fixer les URLs d'images
+        image_url_fixed = fix_image_url(city.get("image_url", ""))
+
         # SEO dynamique avec rotation
-        seo_title = get_seo_title(city["name"], city.get("province", ""), i)
-        seo_description = get_seo_description(city["name"], city.get("province", ""), i)
+        seo_title = get_seo_title(city["name"], province_normalized, i)
+        seo_description = get_seo_description(city["name"], province_normalized, i)
         h1_text = get_h1_text(city["name"], i)
 
         # Contenu unique généré
@@ -277,7 +338,9 @@ def main():
             seo_title=seo_title,
             seo_description=seo_description,
             h1_text=h1_text,
-            unique_content=unique_content
+            unique_content=unique_content,
+            province_normalized=province_normalized,
+            image_url_fixed=image_url_fixed
         )
 
         output_path = os.path.join(OUTPUT_DIR, "citta", f"{city['slug']}.html")

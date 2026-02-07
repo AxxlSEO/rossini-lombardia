@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ seo_title }}</title>
     <meta name="description" content="{{ seo_description }}">
-    <meta name="keywords" content="tettoia fotovoltaica {{ city.name }}, pensilina fotovoltaica {{ city.name }}, parcheggio fotovoltaico {{ city.name }}, installatore pensiline solari {{ city.province }}, carport fotovoltaico Lombardia">
+    <meta name="keywords" content="tettoia fotovoltaica {{ city.name }}, pensilina fotovoltaica {{ city.name }}, parcheggio fotovoltaico {{ city.name }}, installatore pensiline solari {% if province_normalized %}{{ province_normalized }}{% endif %}, carport fotovoltaico Lombardia">
     <link rel="canonical" href="{{ domain }}/citta/{{ city.slug }}.html">
 
     <!-- Open Graph -->
@@ -13,7 +13,7 @@
     <meta property="og:description" content="Soluzioni di ricarica per veicoli elettrici e pensiline fotovoltaiche a {{ city.name }}. Installazione chiavi in mano.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ domain }}/citta/{{ city.slug }}.html">
-    {% if city.image_url %}<meta property="og:image" content="{{ city.image_url }}">{% endif %}
+    {% if image_url_fixed %}<meta property="og:image" content="{{ image_url_fixed }}">{% endif %}
 
     <!-- hreflang -->
     <link rel="alternate" hreflang="it" href="{{ domain }}/citta/{{ city.slug }}.html">
@@ -31,7 +31,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Rossini Energy — {{ city.name }}",
-        "description": "Installazione colonnine di ricarica per veicoli elettrici e pensiline fotovoltaiche a {{ city.name }}, {{ city.province }}, Lombardia.",
+        "description": "Installazione colonnine di ricarica per veicoli elettrici e pensiline fotovoltaiche a {{ city.name }}{% if province_normalized %}, {{ province_normalized }}{% endif %}, Lombardia.",
         "url": "{{ domain }}/citta/{{ city.slug }}.html",
         "telephone": "{{ company.phone }}",
         "email": "{{ company.email }}",
@@ -49,7 +49,7 @@
             "name": "{{ city.name }}",
             "containedInPlace": {
                 "@type": "AdministrativeArea",
-                "name": "{{ city.province }}"
+                "name": "{{ province_normalized }}"
             }
         },
         "geo": {
@@ -109,13 +109,174 @@
         ]
     }
     </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {% if unique_content.profile == "A" %}
+            {
+                "@type": "Question",
+                "name": "Quanto spazio serve per installare una tettoia fotovoltaica in una grande azienda?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Per un'azienda con 50+ dipendenti a {{ city.name }}, consigliamo una struttura da 30-50 kWp che copre circa 200-300 m² di parcheggio. Rossini Energy progetta soluzioni modulari che si adattano allo spazio disponibile."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quali sono i tempi di ritorno dell'investimento?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Con i prezzi energetici attuali e gli incentivi fiscali (credito d'imposta 6%), il ROI medio è di 6-8 anni. L'autoconsumo energetico riduce le bollette fino al 70%."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Posso integrare colonnine di ricarica per auto aziendali?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Assolutamente. Le nostre tettoie includono predisposizione per colonnine EV da 7-22 kW, alimentate direttamente dall'impianto fotovoltaico."
+                }
+            }
+            {% elif unique_content.profile == "B" %}
+            {
+                "@type": "Question",
+                "name": "Le tettoie resistono alle sollecitazioni di un'area industriale?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sì, le strutture TOSSO® sono progettate in legno lamellare Douglas classe GL24h, con certificazione statica per neve e vento. Ideali per zone industriali di {{ city.name }}."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Posso alimentare macchinari industriali con l'energia prodotta?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Certamente. L'energia autoconsumata riduce drasticamente i costi operativi. Per aziende energivore, possiamo dimensionare impianti fino a 100 kWp."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Servono permessi edilizi speciali?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "In genere basta una CILA (Comunicazione di Inizio Lavori Asseverata). Rossini Energy gestisce tutta la pratica burocratica per voi."
+                }
+            }
+            {% elif unique_content.profile == "C" %}
+            {
+                "@type": "Question",
+                "name": "Come valorizzano il parcheggio di un centro commerciale?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le pensiline fotovoltaiche offrono riparo ai clienti, riducono la temperatura estiva delle auto (+15°C in meno), e proiettano un'immagine green del vostro brand."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Posso usare l'energia prodotta per l'illuminazione notturna?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sì, con un sistema di accumulo (batterie) o tramite lo scambio sul posto. A {{ city.name }}, molte attività commerciali beneficiano di questa soluzione."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Posso offrire ricarica EV gratuita ai clienti?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Assolutamente. Molti centri commerciali installano colonnine gratuite per fidelizzare i clienti. L'energia viene prodotta dal vostro impianto."
+                }
+            }
+            {% elif unique_content.profile == "E" %}
+            {
+                "@type": "Question",
+                "name": "Una struttura turistica può beneficiare di incentivi specifici?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sì, le strutture ricettive a {{ city.name }} possono accedere al credito d'imposta del 6% per interventi di efficientamento energetico."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Come comunicare l'impegno ecologico agli ospiti?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le pensiline fotovoltaiche sono visibili e comunicano immediatamente la vostra scelta green. Molti ospiti apprezzano hotel e ristoranti sostenibili."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "L'energia prodotta copre il fabbisogno di un hotel?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Dipende dalla dimensione. Un impianto da 30 kWp produce circa 36.000 kWh/anno, sufficiente per coprire 40-60% del fabbisogno di una struttura media."
+                }
+            }
+            {% elif unique_content.profile == "F" %}
+            {
+                "@type": "Question",
+                "name": "Anche enti pubblici possono installare tettoie fotovoltaiche?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Assolutamente. A {{ city.name }}, molte sedi comunali, scuole e ASL stanno investendo in energia rinnovabile. Rossini Energy lavora con procedure di gara pubblica."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quanto produce un impianto fotovoltaico a {{ city.name }}?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Un sistema da 30 kWp produce circa 36.000 kWh/anno{% if province_normalized %} nella {{ province_normalized }}{% endif %}, con un risparmio medio di 18.000-20.000€/anno sulle bollette."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Chi si occupa della manutenzione?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Rossini Energy offre contratti di manutenzione pluriennali con monitoraggio remoto dell'impianto e interventi programmati."
+                }
+            }
+            {% else %}
+            {
+                "@type": "Question",
+                "name": "Anche una piccola azienda può permettersi una tettoia fotovoltaica?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sì! A {{ city.name }}, anche PMI con 10-20 dipendenti possono installare una pensilina fotovoltaica da 10-15 kWp. L'investimento si ammortizza in 7-9 anni."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quanto produce un impianto fotovoltaico a {{ city.name }}?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{% if province_normalized %}In {{ province_normalized }}{% else %}In Lombardia{% endif %}, un sistema da 30 kWp produce mediamente 36.000 kWh/anno, sufficiente per alimentare un'azienda di medie dimensioni."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quanto tempo serve per l'installazione?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Dalla firma del contratto all'attivazione: 8-12 settimane. Rossini Energy gestisce progettazione, permessi, installazione e allaccio alla rete."
+                }
+            }
+            {% endif %}
+        ]
+    }
+    </script>
 </head>
 <body>
 
     <!-- Header -->
 
     <!-- Hero -->
-    <section class="hero" {% if city.image_url %}style="background-image: linear-gradient(rgba(26,26,26,0.75), rgba(26,26,26,0.85)), url('{{ city.image_url }}'); background-size: cover; background-position: center;"{% endif %}>
+    <section class="hero" {% if image_url_fixed %}style="background-image: linear-gradient(rgba(26,26,26,0.75), rgba(26,26,26,0.85)), url('{{ image_url_fixed }}'); background-size: cover; background-position: center;"{% endif %}>
         <div class="container">
             <nav class="breadcrumb" aria-label="Breadcrumb">
                 <a href="https://rossinienergy.it/" target="_blank" rel="noopener">Rossini Energy</a>
@@ -125,7 +286,7 @@
                 <span>{{ city.name }}</span>
             </nav>
             <h1>{{ h1_text|safe }}</h1>
-            <p class="hero-subtitle">Installazione pensiline fotovoltaiche per parcheggi aziendali a {{ city.name }}, {{ city.province }}</p>
+            <p class="hero-subtitle">Installazione pensiline fotovoltaiche per parcheggi aziendali a {{ city.name }}{% if province_normalized %}, {{ province_normalized }}{% endif %}</p>
             <a href="{{ company.rdv_url }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Calcola il tuo preventivo</a>
         </div>
     </section>
@@ -141,7 +302,7 @@
                     </p>
                     <p>
                         <strong>Rossini Energy</strong> progetta e installa <strong>pensiline fotovoltaiche TOSSO®</strong> per parcheggi aziendali
-                        a <strong>{{ city.name }}</strong>{% if city.province %}, in provincia di <strong>{{ city.province }}</strong>{% endif %}.
+                        a <strong>{{ city.name }}</strong>{% if province_normalized %}, in <strong>{{ province_normalized }}</strong>{% endif %}.
                         La nostra soluzione integra pannelli fotovoltaici bifacciali su una struttura in legno Douglas sostenibile,
                         con colonnine di ricarica per veicoli elettrici integrate direttamente nella tettoia.
                     </p>
@@ -158,10 +319,10 @@
                             <dd>{{ "{:,}".format(city.population).replace(",", ".") }} ab.</dd>
                         </div>
                         {% endif %}
-                        {% if city.province %}
+                        {% if province_normalized %}
                         <div class="stat-row">
                             <dt>Provincia</dt>
-                            <dd>{{ city.province }}</dd>
+                            <dd>{{ province_normalized }}</dd>
                         </div>
                         {% endif %}
                         {% if city.area_km2 %}
@@ -216,33 +377,49 @@
         </div>
     </section>
 
-    <!-- Climat -->
-    {% if city.climate %}
+    <!-- Produzione Solare -->
+    {% if city.solar %}
     <section class="section">
         <div class="container">
-            <h2>Clima e Produzione Solare a {{ city.name }}</h2>
+            <h2>Produzione Solare a {{ city.name }}</h2>
             <p>
-                Le condizioni climatiche di {{ city.name }} sono favorevoli all'installazione di pensiline fotovoltaiche.
-                Con una temperatura media annuale di <strong>{{ city.climate.temp_avg_annual }}°C</strong>
-                {% if city.climate.precipitation_annual_mm %}
-                e precipitazioni medie di circa <strong>{{ city.climate.precipitation_annual_mm }} mm/anno</strong>
-                {% endif %},
-                la produzione di energia solare è ottimale per alimentare le stazioni di ricarica.
+                Un impianto fotovoltaico da <strong>30 kWp</strong> installato su una pensilina a {{ city.name }}
+                produce circa <strong>{{ "{:,.0f}".format(city.solar.annual_production_kwh).replace(",", ".") }} kWh/anno</strong>
+                secondo i dati del sistema europeo PVGIS.
+                Questo equivale a un <strong>risparmio medio di 18.000-22.000€/anno</strong> sulle bollette energetiche,
+                con un ritorno sull'investimento in 6-8 anni.
             </p>
             <div class="grid-3">
                 <div class="climate-card">
-                    <span class="climate-value">{{ city.climate.temp_avg_annual }}°C</span>
-                    <span class="climate-label">Temperatura media annua</span>
+                    <span class="climate-value">{{ "{:,.0f}".format(city.solar.annual_production_kwh).replace(",", ".") }}</span>
+                    <span class="climate-label">kWh/anno prodotti</span>
                 </div>
                 <div class="climate-card">
-                    <span class="climate-value">{{ city.climate.temp_max_month }}°C</span>
-                    <span class="climate-label">Mese più caldo</span>
+                    <span class="climate-value">{{ "{:,.0f}".format(city.solar.irradiation_kwh_m2).replace(",", ".") }}</span>
+                    <span class="climate-label">kWh/m² irraggiamento</span>
                 </div>
                 <div class="climate-card">
-                    <span class="climate-value">{{ city.climate.temp_min_month }}°C</span>
-                    <span class="climate-label">Mese più freddo</span>
+                    <span class="climate-value">{{ city.solar.optimal_angle|int }}°</span>
+                    <span class="climate-label">Angolo ottimale pannelli</span>
                 </div>
             </div>
+            {% if city.solar.monthly_production %}
+            <p style="margin-top:1.5rem;font-size:0.95rem;color:#666;">
+                <strong>Produzione mensile media:</strong>
+                Gen {{ "{:,.0f}".format(city.solar.monthly_production[0]).replace(",", ".") }} kWh,
+                Feb {{ "{:,.0f}".format(city.solar.monthly_production[1]).replace(",", ".") }} kWh,
+                Mar {{ "{:,.0f}".format(city.solar.monthly_production[2]).replace(",", ".") }} kWh,
+                Apr {{ "{:,.0f}".format(city.solar.monthly_production[3]).replace(",", ".") }} kWh,
+                Mag {{ "{:,.0f}".format(city.solar.monthly_production[4]).replace(",", ".") }} kWh,
+                Giu {{ "{:,.0f}".format(city.solar.monthly_production[5]).replace(",", ".") }} kWh,
+                Lug {{ "{:,.0f}".format(city.solar.monthly_production[6]).replace(",", ".") }} kWh,
+                Ago {{ "{:,.0f}".format(city.solar.monthly_production[7]).replace(",", ".") }} kWh,
+                Set {{ "{:,.0f}".format(city.solar.monthly_production[8]).replace(",", ".") }} kWh,
+                Ott {{ "{:,.0f}".format(city.solar.monthly_production[9]).replace(",", ".") }} kWh,
+                Nov {{ "{:,.0f}".format(city.solar.monthly_production[10]).replace(",", ".") }} kWh,
+                Dic {{ "{:,.0f}".format(city.solar.monthly_production[11]).replace(",", ".") }} kWh
+            </p>
+            {% endif %}
         </div>
     </section>
     {% endif %}
@@ -296,7 +473,7 @@
                 {% for nc in nearby_cities[:8] %}
                 <a href="{{ nc.slug }}.html" class="nearby-card">
                     <strong>{{ nc.name }}</strong>
-                    <span>{{ "{:,}".format(nc.population).replace(",", ".") }} ab. — {{ nc.province }}</span>
+                    <span>{{ "{:,}".format(nc.population).replace(",", ".") }} ab.{% if nc.province %} — {{ nc.province }}{% endif %}</span>
                 </a>
                 {% endfor %}
             </div>
@@ -404,7 +581,7 @@
             </div>
             <div class="faq-item">
                 <h3>📊 Quanto produce un impianto fotovoltaico a {{ city.name }}?</h3>
-                <p>Un sistema da 30 kWp produce circa 36.000 kWh/anno nella provincia di {{ city.province }}, con un risparmio medio di 18.000-20.000€/anno sulle bollette.</p>
+                <p>Un sistema da 30 kWp produce circa 36.000 kWh/anno{% if province_normalized %} nella {{ province_normalized }}{% endif %}, con un risparmio medio di 18.000-20.000€/anno sulle bollette.</p>
             </div>
             <div class="faq-item">
                 <h3>🔧 Chi si occupa della manutenzione?</h3>
@@ -419,7 +596,7 @@
             </div>
             <div class="faq-item">
                 <h3>🌞 Quanto produce un impianto fotovoltaico a {{ city.name }}?</h3>
-                <p>In provincia di {{ city.province }}, un sistema da 30 kWp produce mediamente 36.000 kWh/anno, sufficiente per alimentare un'azienda di medie dimensioni.</p>
+                <p>{% if province_normalized %}In {{ province_normalized }}{% else %}In Lombardia{% endif %}, un sistema da 30 kWp produce mediamente 36.000 kWh/anno, sufficiente per alimentare un'azienda di medie dimensioni.</p>
             </div>
             <div class="faq-item">
                 <h3>⏱️ Quanto tempo serve per l'installazione?</h3>
