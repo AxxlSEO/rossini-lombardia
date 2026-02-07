@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colonnine di Ricarica EV e Pensiline Fotovoltaiche a {{ city.name }} | Rossini Energy</title>
+    <meta name="description" content="Installazione colonnine di ricarica per veicoli elettrici e pensiline fotovoltaiche TOSSO® a {{ city.name }}, {{ city.province }}. Rossini Energy: soluzioni di ricarica sostenibili in Lombardia.">
+    <meta name="keywords" content="colonnina ricarica {{ city.name }}, borne recharge {{ city.name }}, pensilina fotovoltaica {{ city.name }}, ricarica veicoli elettrici {{ city.province }}, carport solare Lombardia">
+    <link rel="canonical" href="{{ domain }}/citta/{{ city.slug }}.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Colonnine di Ricarica EV a {{ city.name }} | Rossini Energy">
+    <meta property="og:description" content="Soluzioni di ricarica per veicoli elettrici e pensiline fotovoltaiche a {{ city.name }}. Installazione chiavi in mano.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ domain }}/citta/{{ city.slug }}.html">
+    {% if city.image_url %}<meta property="og:image" content="{{ city.image_url }}">{% endif %}
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="it" href="{{ domain }}/citta/{{ city.slug }}.html">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- JSON-LD Schema: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Rossini Energy — {{ city.name }}",
+        "description": "Installazione colonnine di ricarica per veicoli elettrici e pensiline fotovoltaiche a {{ city.name }}, {{ city.province }}, Lombardia.",
+        "url": "{{ domain }}/citta/{{ city.slug }}.html",
+        "telephone": "{{ company.phone }}",
+        "email": "{{ company.email }}",
+        "image": "{{ company.logo }}",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ company.address_it.street }}",
+            "addressLocality": "{{ company.address_it.city }}",
+            "addressRegion": "Lombardia",
+            "postalCode": "{{ company.address_it.postal_code }}",
+            "addressCountry": "IT"
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "{{ city.name }}",
+            "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "{{ city.province }}"
+            }
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": {{ city.latitude }},
+            "longitude": {{ city.longitude }}
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servizi Rossini Energy",
+            "itemListElement": [
+                {% for service in company.services %}
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "{{ service.name_it }}",
+                        "description": "{{ service.description_it }}"
+                    }
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+            ]
+        },
+        "sameAs": ["{{ company.url }}"]
+    }
+    </script>
+
+    <!-- JSON-LD Schema: City -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "City",
+        "name": "{{ city.name }}",
+        "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Lombardia"
+        },
+        {% if city.population %}"population": {{ city.population }},{% endif %}
+        {% if city.area_km2 %}"areaServed": "{{ city.area_km2 }} km²",{% endif %}
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": {{ city.latitude }},
+            "longitude": {{ city.longitude }}
+        }
+    }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ domain }}/"},
+            {"@type": "ListItem", "position": 2, "name": "Lombardia", "item": "{{ domain }}/index.html"},
+            {"@type": "ListItem", "position": 3, "name": "{{ city.name }}", "item": "{{ domain }}/citta/{{ city.slug }}.html"}
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Rossini Energy</span>
+            </a>
+            <nav class="nav">
+                <a href="../index.html">Tutte le città</a>
+                <a href="{{ company.url }}" target="_blank" rel="noopener">Chi siamo</a>
+                <a href="#contatto" class="btn btn-primary">Richiedi preventivo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" {% if city.image_url %}style="background-image: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.85)), url('{{ city.image_url }}')"{% endif %}>
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Lombardia</a>
+                <span>›</span>
+                <span>{{ city.name }}</span>
+            </nav>
+            <h1>Colonnine di Ricarica e Pensiline Fotovoltaiche a <strong>{{ city.name }}</strong></h1>
+            <p class="hero-subtitle">Soluzioni di ricarica per veicoli elettrici e energia solare nella provincia di {{ city.province }}</p>
+            <a href="#contatto" class="btn btn-primary btn-lg">Richiedi un preventivo gratuito</a>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="section">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <h2>Ricarica EV e Energia Solare a {{ city.name }}</h2>
+                    <p>
+                        <strong>Rossini Energy</strong> installa colonnine di ricarica per veicoli elettrici e pensiline fotovoltaiche
+                        a <strong>{{ city.name }}</strong>{% if city.province %}, in provincia di <strong>{{ city.province }}</strong>{% endif %}.
+                        {% if city.population %}
+                        Con una popolazione di <strong>{{ "{:,}".format(city.population).replace(",", ".") }}</strong> abitanti,
+                        {{ city.name }} rappresenta un territorio chiave per la transizione energetica in Lombardia.
+                        {% endif %}
+                    </p>
+                    {% if city.wikipedia_extract %}
+                    <p>{{ city.wikipedia_extract[:500] }}{% if city.wikipedia_extract|length > 500 %}...{% endif %}</p>
+                    {% endif %}
+                    <p>
+                        Le nostre soluzioni comprendono stazioni di ricarica da 7kW a 22kW in legno di Douglas o alluminio riciclato,
+                        nonché le pensiline fotovoltaiche <strong>TOSSO®</strong> con pannelli bifacciali e struttura in legno sostenibile.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>📊 {{ city.name }} in cifre</h3>
+                    <dl class="stats-list">
+                        {% if city.population %}
+                        <div class="stat-row">
+                            <dt>Popolazione</dt>
+                            <dd>{{ "{:,}".format(city.population).replace(",", ".") }} ab.</dd>
+                        </div>
+                        {% endif %}
+                        {% if city.province %}
+                        <div class="stat-row">
+                            <dt>Provincia</dt>
+                            <dd>{{ city.province }}</dd>
+                        </div>
+                        {% endif %}
+                        {% if city.area_km2 %}
+                        <div class="stat-row">
+                            <dt>Superficie</dt>
+                            <dd>{{ city.area_km2 }} km²</dd>
+                        </div>
+                        {% endif %}
+                        {% if city.altitude_m %}
+                        <div class="stat-row">
+                            <dt>Altitudine</dt>
+                            <dd>{{ city.altitude_m|int }} m s.l.m.</dd>
+                        </div>
+                        {% endif %}
+                        {% if city.postal_code %}
+                        <div class="stat-row">
+                            <dt>CAP</dt>
+                            <dd>{{ city.postal_code }}</dd>
+                        </div>
+                        {% endif %}
+                        <div class="stat-row">
+                            <dt>Regione</dt>
+                            <dd>Lombardia</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section-alt" id="servizi">
+        <div class="container">
+            <h2>I nostri servizi a {{ city.name }}</h2>
+            <div class="grid-3">
+                {% for service in company.services %}
+                <div class="service-card">
+                    <div class="service-icon">
+                        {% if loop.index == 1 %}🔌{% elif loop.index == 2 %}☀️{% else %}💻{% endif %}
+                    </div>
+                    <h3>{{ service.name_it }}</h3>
+                    <p>{{ service.description_it }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Climat -->
+    {% if city.climate %}
+    <section class="section">
+        <div class="container">
+            <h2>Clima e Produzione Solare a {{ city.name }}</h2>
+            <p>
+                Le condizioni climatiche di {{ city.name }} sono favorevoli all'installazione di pensiline fotovoltaiche.
+                Con una temperatura media annuale di <strong>{{ city.climate.temp_avg_annual }}°C</strong>
+                {% if city.climate.precipitation_annual_mm %}
+                e precipitazioni medie di circa <strong>{{ city.climate.precipitation_annual_mm }} mm/anno</strong>
+                {% endif %},
+                la produzione di energia solare è ottimale per alimentare le stazioni di ricarica.
+            </p>
+            <div class="grid-3">
+                <div class="climate-card">
+                    <span class="climate-value">{{ city.climate.temp_avg_annual }}°C</span>
+                    <span class="climate-label">Temperatura media annua</span>
+                </div>
+                <div class="climate-card">
+                    <span class="climate-value">{{ city.climate.temp_max_month }}°C</span>
+                    <span class="climate-label">Mese più caldo</span>
+                </div>
+                <div class="climate-card">
+                    <span class="climate-value">{{ city.climate.temp_min_month }}°C</span>
+                    <span class="climate-label">Mese più freddo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- POIs / Infrastrutture -->
+    {% if city.pois %}
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Infrastrutture di Ricarica a {{ city.name }}</h2>
+            <div class="grid-2">
+                <div>
+                    <p>
+                        A {{ city.name }} sono attualmente censiti <strong>{{ city.pois.ev_charging_stations }}</strong> punti di ricarica
+                        per veicoli elettrici e <strong>{{ city.pois.parking_count }}</strong> parcheggi pubblici.
+                        {% if city.pois.ev_charging_stations < 10 %}
+                        Il territorio presenta un potenziale significativo per l'espansione della rete di ricarica elettrica.
+                        {% else %}
+                        La domanda di ricarica è in costante crescita e necessita di nuove infrastrutture per soddisfare le esigenze dei cittadini.
+                        {% endif %}
+                    </p>
+                    <p>
+                        Rossini Energy può installare colonnine di ricarica nei parcheggi esistenti di {{ city.name }},
+                        trasformandoli in hub di mobilità sostenibile grazie alle pensiline fotovoltaiche TOSSO®.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>🔋 Stato della ricarica EV</h3>
+                    <dl class="stats-list">
+                        <div class="stat-row">
+                            <dt>Punti di ricarica</dt>
+                            <dd>{{ city.pois.ev_charging_stations }}</dd>
+                        </div>
+                        <div class="stat-row">
+                            <dt>Parcheggi censiti</dt>
+                            <dd>{{ city.pois.parking_count }}</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Villes proches (maillage interne) -->
+    {% if nearby_cities %}
+    <section class="section">
+        <div class="container">
+            <h2>Rossini Energy nelle città vicine</h2>
+            <p>Operiamo anche nelle seguenti città della Lombardia vicine a {{ city.name }}:</p>
+            <div class="nearby-grid">
+                {% for nc in nearby_cities[:8] %}
+                <a href="{{ nc.slug }}.html" class="nearby-card">
+                    <strong>{{ nc.name }}</strong>
+                    <span>{{ "{:,}".format(nc.population).replace(",", ".") }} ab. — {{ nc.province }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- CTA / Contact -->
+    <section class="section section-cta" id="contatto">
+        <div class="container">
+            <h2>Richiedi un preventivo gratuito a {{ city.name }}</h2>
+            <p>
+                Vuoi installare colonnine di ricarica o pensiline fotovoltaiche a {{ city.name }}?
+                Contattaci per un preventivo personalizzato e gratuito.
+            </p>
+            <div class="cta-buttons">
+                <a href="tel:{{ company.phone.replace(' ', '').replace('(', '').replace(')', '') }}" class="btn btn-primary btn-lg">
+                    📞 {{ company.phone }}
+                </a>
+                <a href="mailto:{{ company.email }}?subject=Preventivo%20{{ city.name }}" class="btn btn-secondary btn-lg">
+                    ✉️ {{ company.email }}
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <strong>Rossini Energy</strong><br>
+                    {{ company.address_it.street }}<br>
+                    {{ company.address_it.postal_code }} {{ company.address_it.city }} ({{ company.address_it.province }})<br>
+                    Italia
+                </div>
+                <div>
+                    <strong>Contatti</strong><br>
+                    <a href="tel:{{ company.phone.replace(' ', '') }}">{{ company.phone }}</a><br>
+                    <a href="mailto:{{ company.email }}">{{ company.email }}</a><br>
+                    <a href="{{ company.url }}" target="_blank" rel="noopener">rossinienergy.com</a>
+                </div>
+                <div>
+                    <strong>Zone operative in Lombardia</strong><br>
+                    <a href="../index.html">Tutte le città</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© {{ year }} Rossini Energy — Installazione colonnine di ricarica e pensiline fotovoltaiche in Lombardia</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

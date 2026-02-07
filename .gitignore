@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+data/*.json
+output/citta/*.html
+output/index.html
+output/sitemap.xml
+output/robots.txt
+.DS_Store

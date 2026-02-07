@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colonnine di Ricarica EV e Pensiline Fotovoltaiche in Lombardia | Rossini Energy</title>
+    <meta name="description" content="Rossini Energy installa colonnine di ricarica per veicoli elettrici e pensiline fotovoltaiche in tutta la Lombardia. Scopri i nostri servizi nella tua città.">
+    <link rel="canonical" href="{{ domain }}/index.html">
+
+    <meta property="og:title" content="Rossini Energy — Ricarica EV in Lombardia">
+    <meta property="og:description" content="Installazione colonnine di ricarica e pensiline fotovoltaiche in tutta la Lombardia.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ domain }}/index.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Rossini Energy",
+        "description": "Installazione colonnine di ricarica per veicoli elettrici e pensiline fotovoltaiche in Lombardia.",
+        "url": "{{ domain }}",
+        "telephone": "{{ company.phone }}",
+        "email": "{{ company.email }}",
+        "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Lombardia"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Rossini Energy</span>
+            </a>
+            <nav class="nav">
+                <a href="{{ company.url }}" target="_blank" rel="noopener">Chi siamo</a>
+                <a href="mailto:{{ company.email }}" class="btn btn-primary">Contattaci</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero hero-index">
+        <div class="container">
+            <h1>Colonnine di Ricarica e Pensiline Fotovoltaiche in <strong>Lombardia</strong></h1>
+            <p class="hero-subtitle">
+                Rossini Energy installa soluzioni di ricarica per veicoli elettrici e carport solari in
+                <strong>{{ cities|length }}</strong> città della Lombardia.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Le nostre zone di intervento</h2>
+
+            <!-- Filtro par province -->
+            <div class="province-filter" id="province-filter">
+                <button class="filter-btn active" data-province="all">Tutte ({{ cities|length }})</button>
+                {% for province, count in provinces.items() %}
+                <button class="filter-btn" data-province="{{ province }}">{{ province }} ({{ count }})</button>
+                {% endfor %}
+            </div>
+
+            <div class="cities-grid" id="cities-grid">
+                {% for city in cities %}
+                <a href="citta/{{ city.slug }}.html" class="city-card" data-province="{{ city.province }}">
+                    <h3>{{ city.name }}</h3>
+                    <span class="city-meta">
+                        {{ "{:,}".format(city.population).replace(",", ".") }} ab. — {{ city.province }}
+                    </span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-cta">
+        <div class="container">
+            <h2>Contattaci</h2>
+            <p>Interessati alle nostre soluzioni di ricarica EV e energia solare? Contattateci per un preventivo gratuito.</p>
+            <div class="cta-buttons">
+                <a href="tel:{{ company.phone.replace(' ', '').replace('(', '').replace(')', '') }}" class="btn btn-primary btn-lg">📞 {{ company.phone }}</a>
+                <a href="mailto:{{ company.email }}" class="btn btn-secondary btn-lg">✉️ {{ company.email }}</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© {{ year }} Rossini Energy — Colonnine di ricarica e pensiline fotovoltaiche in Lombardia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Province filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const province = btn.dataset.province;
+            document.querySelectorAll('.city-card').forEach(card => {
+                card.style.display = (province === 'all' || card.dataset.province === province) ? '' : 'none';
+            });
+        });
+    });
+    </script>
+
+</body>
+</html>
