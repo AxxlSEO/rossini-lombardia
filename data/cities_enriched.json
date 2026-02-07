@@ -367,7 +367,11 @@
     "image_url": "http://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20Santa%20Maria%20Nascente%20-%20frazione%20di%20Paderno%20a%20Paderno%20Dugnano.JPG",
     "official_website": "https://www.comune.paderno-dugnano.mi.it/",
     "altitude_m": 163.0,
-    "wikipedia_extract": "Paderno Dugnano è un comune italiano di 47 919 abitanti della città metropolitana di Milano in Lombardia. Il comune fa parte del territorio del Nord Milano."
+    "wikipedia_extract": "Paderno Dugnano è un comune italiano di 47 919 abitanti della città metropolitana di Milano in Lombardia. Il comune fa parte del territorio del Nord Milano.",
+    "pois": {
+      "parking_count": 1826,
+      "ev_charging_stations": 0
+    }
   },
   {
     "name": "Lecco",
@@ -1067,7 +1071,11 @@
     "image_url": "http://commons.wikimedia.org/wiki/Special:FilePath/Vista%20aerea%20di%20Vimercate%2C%20Lombardia.jpg",
     "official_website": "http://www.comune.vimercate.mb.it/",
     "altitude_m": 194.0,
-    "wikipedia_extract": "Vimercate è un comune italiano di 26 322 abitanti della provincia di Monza e della Brianza in Lombardia. È al centro del territorio chiamato Vimercatese."
+    "wikipedia_extract": "Vimercate è un comune italiano di 26 322 abitanti della provincia di Monza e della Brianza in Lombardia. È al centro del territorio chiamato Vimercatese.",
+    "pois": {
+      "parking_count": 1070,
+      "ev_charging_stations": 20
+    }
   },
   {
     "name": "Seriate",
@@ -1781,7 +1789,11 @@
     "image_url": "http://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20Parrocchiale%20GHEDI%20XVIIsec..JPG",
     "official_website": "http://www.comune.ghedi.brescia.it",
     "altitude_m": 85.0,
-    "wikipedia_extract": "Ghedi è un comune italiano di 18 534 abitanti della provincia di Brescia in Lombardia. È situato nella zona della bassa bresciana orientale ed è attraversato dal canale Naviglio."
+    "wikipedia_extract": "Ghedi è un comune italiano di 18 534 abitanti della provincia di Brescia in Lombardia. È situato nella zona della bassa bresciana orientale ed è attraversato dal canale Naviglio.",
+    "pois": {
+      "parking_count": 0,
+      "ev_charging_stations": 2
+    }
   },
   {
     "name": "Melzo",
@@ -1865,7 +1877,11 @@
     "image_url": "http://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20San%20Eustorgio%20Arcore.jpg",
     "official_website": "https://comune.arcore.mb.it/",
     "altitude_m": 193.0,
-    "wikipedia_extract": "Arcore è un comune italiano di 17 917 abitanti della provincia di Monza e della Brianza in Lombardia."
+    "wikipedia_extract": "Arcore è un comune italiano di 17 917 abitanti della provincia di Monza e della Brianza in Lombardia.",
+    "pois": {
+      "parking_count": 1046,
+      "ev_charging_stations": 13
+    }
   },
   {
     "name": "Carate Brianza",
@@ -2323,7 +2339,11 @@
     "image_url": "http://commons.wikimedia.org/wiki/Special:FilePath/Agrate%20Brianza%20%28MB%29%20-%20frazione%20Omate%20-%20villa%20Trivulzio%20-%2002.jpg",
     "official_website": "http://www.comune.agratebrianza.mb.it/",
     "altitude_m": 165.0,
-    "wikipedia_extract": "Agrate Brianza è un comune italiano di 15 900 abitanti della provincia di Monza e della Brianza in Lombardia."
+    "wikipedia_extract": "Agrate Brianza è un comune italiano di 15 900 abitanti della provincia di Monza e della Brianza in Lombardia.",
+    "pois": {
+      "parking_count": 0,
+      "ev_charging_stations": 46
+    }
   },
   {
     "name": "Codogno",
@@ -2385,7 +2405,11 @@
     "image_url": "http://commons.wikimedia.org/wiki/Special:FilePath/Besana%20stazione%20ferr.JPG",
     "official_website": "http://www.comune.besanainbrianza.mb.it",
     "altitude_m": 335.0,
-    "wikipedia_extract": "Besana in Brianza è un comune italiano di 15 479 abitanti della provincia di Monza e della Brianza in Lombardia."
+    "wikipedia_extract": "Besana in Brianza è un comune italiano di 15 479 abitanti della provincia di Monza e della Brianza in Lombardia.",
+    "pois": {
+      "parking_count": 760,
+      "ev_charging_stations": 0
+    }
   },
   {
     "name": "Mortara",
@@ -2403,7 +2427,11 @@
     "image_url": "http://commons.wikimedia.org/wiki/Special:FilePath/Mortara%20duomo.jpg",
     "official_website": "http://www.comune.mortara.pv.it",
     "altitude_m": 114.0,
-    "wikipedia_extract": "Mortara è un comune italiano di 15 739 abitanti della provincia di Pavia in Lombardia. È nota per la produzione del salame d'oca a Indicazione geografica protetta (IGP). È il quarto comune della provincia di Pavia per numero di abitanti dopo Pavia, Vigevano e Voghera."
+    "wikipedia_extract": "Mortara è un comune italiano di 15 739 abitanti della provincia di Pavia in Lombardia. È nota per la produzione del salame d'oca a Indicazione geografica protetta (IGP). È il quarto comune della provincia di Pavia per numero di abitanti dopo Pavia, Vigevano e Voghera.",
+    "pois": {
+      "parking_count": 147,
+      "ev_charging_stations": 1
+    }
   },
   {
     "name": "Casalmaggiore",
@@ -2791,7 +2819,11 @@
     "image_url": "http://commons.wikimedia.org/wiki/Special:FilePath/Varedo%20Piazza%20Parrocchiale.JPG",
     "official_website": "http://www.comune.varedo.mb.it",
     "altitude_m": 180.0,
-    "wikipedia_extract": "Varedo è un comune italiano di 14 024 abitanti della provincia di Monza e della Brianza in Lombardia."
+    "wikipedia_extract": "Varedo è un comune italiano di 14 024 abitanti della provincia di Monza e della Brianza in Lombardia.",
+    "pois": {
+      "parking_count": 1666,
+      "ev_charging_stations": 0
+    }
   },
   {
     "name": "Travagliato",
@@ -3633,7 +3665,11 @@
     "image_url": "http://commons.wikimedia.org/wiki/Special:FilePath/Nembro%20panoramica%2001.jpg",
     "official_website": "http://www.comune.nembro.bg.it",
     "altitude_m": 309.0,
-    "wikipedia_extract": "Nembro /ˈnɛmbɾo, ˈnem-/ è un comune italiano di 11 258 abitanti della provincia di Bergamo in Lombardia. Posto nella val Seriana medio–inferiore si sviluppa prevalentemente sulla destra orografica del fiume Serio. Fa parte della Comunità montana della Valle Seriana."
+    "wikipedia_extract": "Nembro /ˈnɛmbɾo, ˈnem-/ è un comune italiano di 11 258 abitanti della provincia di Bergamo in Lombardia. Posto nella val Seriana medio–inferiore si sviluppa prevalentemente sulla destra orografica del fiume Serio. Fa parte della Comunità montana della Valle Seriana.",
+    "pois": {
+      "parking_count": 0,
+      "ev_charging_stations": 24
+    }
   },
   {
     "name": "Valmadrera",
@@ -3849,7 +3885,11 @@
     "image_url": "http://commons.wikimedia.org/wiki/Special:FilePath/Treviolo%20-%20chiesa%20di%20San%20Giorgio%20-%2001.jpg",
     "official_website": "https://www.comune.treviolo.bg.it/",
     "altitude_m": 225.0,
-    "wikipedia_extract": "Treviolo [tɾeˈvjɔːlo] è un comune italiano di 10 950 abitanti della provincia di Bergamo in Lombardia."
+    "wikipedia_extract": "Treviolo [tɾeˈvjɔːlo] è un comune italiano di 10 950 abitanti della provincia di Bergamo in Lombardia.",
+    "pois": {
+      "parking_count": 0,
+      "ev_charging_stations": 0
+    }
   },
   {
     "name": "Martinengo",
@@ -3933,7 +3973,11 @@
     "image_url": "http://commons.wikimedia.org/wiki/Special:FilePath/Municipio%20di%20Villa%20Carcina.jpg",
     "official_website": "https://www.comune.villacarcina.bs.it",
     "altitude_m": 214.0,
-    "wikipedia_extract": "Villa Carcina è un comune italiano di 10 719 abitanti della provincia di Brescia in Lombardia, nella bassa Val Trompia."
+    "wikipedia_extract": "Villa Carcina è un comune italiano di 10 719 abitanti della provincia di Brescia in Lombardia, nella bassa Val Trompia.",
+    "pois": {
+      "parking_count": 0,
+      "ev_charging_stations": 1
+    }
   },
   {
     "name": "Nave",

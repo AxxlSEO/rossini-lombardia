@@ -690,21 +690,30 @@ nav {
 }
 
 @media (max-width: 768px) {
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Header mobile */
     .logo img {
-        max-height: 28px;
+        max-height: 30px;
     }
 
     nav {
         display: none;
         position: fixed;
-        top: 58px;
+        top: 0;
         left: 0;
         width: 100%;
-        background: #1a1a1a;
-        max-height: calc(100vh - 58px);
+        height: 100vh;
+        background: #000000;
+        z-index: 9999;
         overflow-y: auto;
-        z-index: 999;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     nav.active {
@@ -731,20 +740,91 @@ nav {
         transform: rotate(-45deg) translate(6px, -6px);
     }
 
+    /* Hero */
     .hero {
-        padding: 3rem 0 2.5rem;
-    }
-
-    .section {
-        padding: 3rem 0;
+        padding: 2rem 0 1.5rem;
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: clamp(1.4rem, 5vw, 2.2rem);
+        line-height: 1.3;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Sections */
+    .section {
+        padding: 2.5rem 0;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    /* Grilles - 1 colonne sur mobile */
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .nearby-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Cards */
+    .info-card,
+    .service-card,
+    .climate-card,
+    .nearby-card,
+    .city-card {
+        padding: 1.2rem;
+    }
+
+    /* Boutons CTA */
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn,
+    .btn-lg {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Typeform embed mobile */
+    .typeform-container {
+        height: 500px !important;
+        margin: 1.5rem auto 0 !important;
+    }
+
+    /* Province filter - scroll horizontal */
+    .province-filter {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-nav {
+        align-items: center;
     }
 
     /* Mobile menu adjustments */
