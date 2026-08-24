@@ -92,38 +92,23 @@ def find_nearby_cities(target, all_cities, max_count=8, max_distance_km=50):
     return [c for _, c in nearby[:max_count]]
 
 
-def get_seo_title(city_name, province, city_index):
-    """Génère un title SEO avec rotation (5 variantes)."""
-    titles = [
-        f"Tettoia Fotovoltaica per Parcheggio a {city_name} | Rossini Energy",
-        f"Pensilina Fotovoltaica a {city_name}, {province} - Preventivo Gratuito | Rossini Energy",
-        f"Parcheggio Fotovoltaico a {city_name} | Installazione Chiavi in Mano | Rossini Energy",
-        f"Installatore Pensiline Fotovoltaiche a {city_name} | Rossini Energy",
-        f"Tettoia Solare per Parcheggio Aziendale a {city_name} | Rossini Energy"
-    ]
-    return titles[city_index % 5]
+def get_seo_title(city_name):
+    """Title unique, aligné sur le H1 (pas de rotation)."""
+    return f"Pensilina Fotovoltaica a {city_name}: Parcheggi Aziendali | Rossini Energy"
 
 
-def get_seo_description(city_name, province, city_index):
-    """Génère une meta description SEO avec rotation (5 variantes)."""
-    descriptions = [
-        f"Rossini Energy installa tettoie fotovoltaiche per parcheggi aziendali a {city_name}. Struttura in legno, pannelli bifacciali. Preventivo gratuito.",
-        f"Pensilina fotovoltaica a {city_name}: trasforma il parcheggio della tua azienda in una fonte di energia rinnovabile. Installazione chiavi in mano.",
-        f"Parcheggio fotovoltaico a {city_name}, {province}. Riduci i costi energetici della tua azienda con le pensiline solari TOSSO® di Rossini Energy.",
-        f"Installazione tettoie fotovoltaiche per aziende e PMI a {city_name}. Legno Douglas, pannelli bifacciali. Contattaci per un sopralluogo gratuito.",
-        f"Copri il parcheggio della tua azienda a {city_name} con una pensilina fotovoltaica. Energia solare + protezione veicoli. Rossini Energy."
-    ]
-    return descriptions[city_index % 5]
+def get_seo_description(city_name, solar_annual_str):
+    """Meta description unique, différenciée par le chiffre PVGIS local."""
+    if solar_annual_str:
+        return (f"Rossini Energy installa pensiline fotovoltaiche per parcheggi aziendali a {city_name}: "
+                f"un impianto da 30 kWp produce fino a {solar_annual_str} kWh/anno. Preventivo gratuito.")
+    return (f"Rossini Energy installa pensiline fotovoltaiche per parcheggi aziendali a {city_name}. "
+            f"Sopralluogo e preventivo gratuiti, installazione chiavi in mano.")
 
 
-def get_h1_text(city_name, city_index):
-    """Génère un H1 avec rotation (3 variantes)."""
-    h1_variants = [
-        f"Tettoia Fotovoltaica per Parcheggio a <strong>{city_name}</strong>",
-        f"Pensilina Fotovoltaica a <strong>{city_name}</strong>",
-        f"Parcheggio Fotovoltaico a <strong>{city_name}</strong>"
-    ]
-    return h1_variants[city_index % 3]
+def get_h1_text(city_name):
+    """H1 unique, aligné sur le title."""
+    return f"Pensilina Fotovoltaica a <strong>{city_name}</strong>"
 
 
 def get_city_profile(city):
@@ -190,98 +175,74 @@ def get_city_profile(city):
     return "D", "Residenziale"
 
 
-def generate_unique_city_content(city):
-    """Génère un contenu unique pour chaque ville basé sur son profil."""
-    city_name = city.get("name", "")
-    province_raw = city.get("province", "")
-    population = city.get("population", 0)
+MESI_IT = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno",
+           "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"]
 
-    # Normaliser la province pour éviter les duplications
-    province = normalize_province(province_raw)
-    # Extraire juste le nom de la province sans "provincia di"
-    province_name_only = province.replace("provincia di ", "").replace("Provincia di ", "") if province else ""
 
-    # Obtenir le profil de la ville
-    profile_code, profile_name = get_city_profile(city)
+def fmt_kwh(v):
+    return "{:,.0f}".format(v).replace(",", ".")
 
-    # Données disponibles
-    has_pois = bool(city.get("pois"))
-    parking_count = city.get("pois", {}).get("parking_count", 0) if has_pois else 0
-    ev_stations = city.get("pois", {}).get("ev_charging_stations", 0) if has_pois else 0
 
-    industry = city.get("industry", {})
-    industrial_zones = industry.get("industrial_zones_count", 0)
-    industrial_area = industry.get("industrial_area_hectares", 0)
-    surface_parking = industry.get("surface_parking_count", 0)
+def build_faqs(city, solar_annual_str):
+    """4 FAQ par ville : 2 socles (dont une avec le chiffre PVGIS local)
+    + 2 conditionnelles selon les données réelles de la ville."""
+    name = city["name"]
+    faqs = []
 
-    # Contenu adapté par profil
-    if profile_code == "A":  # Metropoli
-        h2 = f"Tettoie Fotovoltaiche per Grandi Aziende a {city_name}"
-        intro = f"{city_name}, metropoli lombarda con {population:,} abitanti, concentra numerose aziende e sedi direzionali. "
-        intro += "I vasti parcheggi aziendali rappresentano un'opportunità unica per installare tettoie fotovoltaiche TOSSO® "
-        intro += "e produrre energia rinnovabile su larga scala. "
+    if solar_annual_str:
+        faqs.append({
+            "q": f"Quanto produce una pensilina fotovoltaica a {name}?",
+            "a": (f"A {name}, un impianto da 30 kWp installato su pensilina produce circa "
+                  f"{solar_annual_str} kWh all'anno secondo i dati PVGIS, con un risparmio stimato "
+                  f"di 8.000-9.000 € l'anno sulla bolletta energetica."),
+        })
+    faqs.append({
+        "q": "Quanto tempo serve per l'installazione?",
+        "a": ("Dalla firma del contratto all'attivazione servono 8-12 settimane. Rossini Energy "
+              "gestisce progettazione, pratiche edilizie, installazione e allaccio alla rete."),
+    })
 
-    elif profile_code == "B":  # Polo industriale
-        h2 = f"Pensiline Fotovoltaiche per Aziende Industriali a {city_name}"
-        intro = f"{city_name} è un importante polo industriale"
-        if province_name_only:
-            intro += f" della provincia di {province_name_only}"
-        if industrial_zones > 0:
-            intro += f", con {industrial_zones} zone industriali censite"
-        intro += ". "
-        intro += "Le aziende manifatturiere e logistiche possono ridurre drasticamente i costi energetici "
-        intro += "coprendo i parcheggi e le aree operative con tettoie fotovoltaiche ad alta efficienza. "
+    extra = []
+    industry = city.get("industry", {}) or {}
+    pois = city.get("pois", {}) or {}
+    code, _ = get_city_profile(city)
 
-    elif profile_code == "C":  # Centro commerciale
-        h2 = f"Pensiline Fotovoltaiche per Centri Commerciali a {city_name}"
-        intro = f"{city_name} dispone di un tessuto commerciale dinamico. "
-        intro += "Centri commerciali, supermercati e aziende del terziario possono valorizzare i propri parcheggi "
-        intro += "installando pensiline fotovoltaiche che producono energia e offrono riparo ai clienti. "
+    if code == "F":
+        extra.append({
+            "q": "Anche enti pubblici possono installare pensiline fotovoltaiche?",
+            "a": (f"Sì. A {name} sedi comunali, scuole e ASL possono coprire i propri parcheggi con "
+                  "pensiline fotovoltaiche; Rossini Energy partecipa anche a procedure di gara pubblica."),
+        })
+    if industry.get("industrial_zones_count", 0) > 50:
+        extra.append({
+            "q": "Le pensiline sono adatte alle aree industriali?",
+            "a": ("Sì. Le strutture TOSSO® in legno lamellare Douglas classe GL24h hanno certificazione "
+                  "statica per neve e vento e coprono anche grandi parcheggi industriali."),
+        })
+    if industry.get("malls_count", 0) > 1 or industry.get("commercial_zones_count", 0) > 30:
+        extra.append({
+            "q": "Cosa cambia per un centro commerciale?",
+            "a": ("La pensilina offre riparo ai clienti, riduce la temperatura estiva delle auto e alimenta "
+                  "illuminazione e ricarica dei veicoli con l'energia prodotta dal parcheggio stesso."),
+        })
+    if pois.get("hotels_count", 0) > 10:
+        extra.append({
+            "q": "Una struttura ricettiva può beneficiarne?",
+            "a": (f"Sì. Hotel e ristoranti a {name} possono coprire una parte del fabbisogno con l'energia "
+                  "della pensilina e comunicare agli ospiti una scelta green visibile."),
+        })
+    extra.append({
+        "q": "Quali incentivi fiscali esistono per le aziende?",
+        "a": ("Le imprese possono ammortizzare l'investimento con gli incentivi in vigore, come "
+              "l'iperammortamento previsto dalla Legge di Bilancio 2026; Rossini Energy vi supporta nella pratica."),
+    })
+    extra.append({
+        "q": "Servono permessi edilizi?",
+        "a": ("In genere è sufficiente una CILA (Comunicazione di Inizio Lavori Asseverata). "
+              "Rossini Energy gestisce l'intera pratica burocratica."),
+    })
 
-    elif profile_code == "E":  # Turistico
-        h2 = f"Tettoie Fotovoltaiche per Strutture Turistiche a {city_name}"
-        intro = f"{city_name}, con la sua vocazione turistica, può beneficiare di pensiline fotovoltaiche "
-        intro += "per hotel, ristoranti e strutture ricettive. Un investimento che riduce i costi energetici "
-        intro += "e rafforza l'immagine green dell'attività. "
-
-    elif profile_code == "F":  # Capoluogo
-        h2 = f"Pensiline Fotovoltaiche a {city_name}, Capoluogo di Provincia"
-        intro = f"{city_name}, capoluogo di provincia, riunisce enti pubblici, aziende e PMI. "
-        intro += "Le tettoie fotovoltaiche TOSSO® sono ideali per parcheggi aziendali, sedi comunali, "
-        intro += "e strutture sanitarie che vogliono investire in energie rinnovabili. "
-
-    else:  # D - Residenziale
-        h2 = f"Parcheggi Fotovoltaici per Aziende e PMI a {city_name}"
-        intro = f"A {city_name} ({province}), le aziende locali possono beneficiare dell'energia solare. "
-        intro += "Installare una tettoia fotovoltaica sul parcheggio aziendale significa produrre energia pulita, "
-        intro += "proteggere i veicoli e ridurre le bollette energetiche. "
-
-    # Compléter l'intro avec les données disponibles
-    if surface_parking > 0 and industrial_zones > 0:
-        intro += f"Il territorio conta {surface_parking} parcheggi di superficie, "
-        intro += "molti dei quali potrebbero essere trasformati in impianti fotovoltaici. "
-
-    if has_pois and ev_stations > 0:
-        intro += f"Con {ev_stations} punti di ricarica EV già presenti, {city_name} dimostra "
-        intro += "attenzione alla mobilità elettrica. Le nostre tettoie integrano colonnine di ricarica. "
-
-    # Avantages personnalisés
-    benefits = "I vantaggi per la tua azienda: produzione di energia solare autoconsumata, "
-    benefits += "riduzione dei costi energetici fino al 70%, protezione dei veicoli, "
-    benefits += "valorizzazione dell'immagine aziendale green"
-
-    if profile_code in ["A", "B"]:
-        benefits += ", e possibilità di vendere l'energia in eccesso alla rete."
-    else:
-        benefits += ", e accesso agli incentivi fiscali per le energie rinnovabili."
-
-    return {
-        "h2": h2,
-        "intro": intro,
-        "benefits": benefits,
-        "profile": profile_code,
-        "profile_name": profile_name
-    }
+    return faqs + extra[:2]
 
 
 def main():
@@ -330,13 +291,26 @@ def main():
         # Fixer les URLs d'images
         image_url_fixed = fix_image_url(city.get("image_url", ""))
 
-        # SEO dynamique avec rotation
-        seo_title = get_seo_title(city["name"], province_normalized, i)
-        seo_description = get_seo_description(city["name"], province_normalized, i)
-        h1_text = get_h1_text(city["name"], i)
+        # Données solaires locales (PVGIS) — le différenciateur réel des pages
+        solar = city.get("solar") or {}
+        solar_annual = fmt_kwh(solar["annual_production_kwh"]) if solar.get("annual_production_kwh") else ""
+        solar_month_min = solar_month_max = ""
+        solar_month_min_name = solar_month_max_name = ""
+        monthly = solar.get("monthly_production") or []
+        if len(monthly) == 12:
+            mn, mx = min(range(12), key=lambda m: monthly[m]), max(range(12), key=lambda m: monthly[m])
+            solar_month_min, solar_month_min_name = fmt_kwh(monthly[mn]), MESI_IT[mn]
+            solar_month_max, solar_month_max_name = fmt_kwh(monthly[mx]), MESI_IT[mx]
 
-        # Contenu unique généré
-        unique_content = generate_unique_city_content(city)
+        industrial_zones = (city.get("industry", {}) or {}).get("industrial_zones_count", 0)
+
+        # SEO à pattern unique (title/H1 alignés, description différenciée par PVGIS)
+        seo_title = get_seo_title(city["name"])
+        seo_description = get_seo_description(city["name"], solar_annual)
+        h1_text = get_h1_text(city["name"])
+
+        # FAQ par ville (mêmes données pour le JSON-LD et la section visible)
+        faqs = build_faqs(city, solar_annual)
 
         html = city_template.render(
             city=city,
@@ -347,7 +321,13 @@ def main():
             seo_title=seo_title,
             seo_description=seo_description,
             h1_text=h1_text,
-            unique_content=unique_content,
+            faqs=faqs,
+            solar_annual=solar_annual,
+            solar_month_min=solar_month_min,
+            solar_month_min_name=solar_month_min_name,
+            solar_month_max=solar_month_max,
+            solar_month_max_name=solar_month_max_name,
+            industrial_zones=industrial_zones,
             province_normalized=province_normalized,
             image_url_fixed=image_url_fixed
         )

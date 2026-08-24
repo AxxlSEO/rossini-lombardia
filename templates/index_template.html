@@ -7,8 +7,8 @@
     <meta name="description" content="Rossini Energy installa pensiline fotovoltaiche TOSSO® per parcheggi aziendali in tutta la Lombardia. Riduci i costi energetici della tua azienda. Preventivo gratuito.">
     <link rel="canonical" href="{{ domain }}/">
 
-    <meta property="og:title" content="Rossini Energy — Ricarica EV in Lombardia">
-    <meta property="og:description" content="Installazione colonnine di ricarica e pensiline fotovoltaiche in tutta la Lombardia.">
+    <meta property="og:title" content="Pensiline Fotovoltaiche in Lombardia | Rossini Energy">
+    <meta property="og:description" content="Pensiline fotovoltaiche TOSSO® per parcheggi aziendali in tutta la Lombardia. Sopralluogo e preventivo gratuiti.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ domain }}/">
 
@@ -21,12 +21,21 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": "Organization",
         "name": "Rossini Energy",
-        "description": "Installazione colonnine di ricarica per veicoli elettrici e pensiline fotovoltaiche in Lombardia.",
+        "description": "Installazione di pensiline fotovoltaiche per parcheggi aziendali in Lombardia.",
         "url": "{{ domain }}",
         "telephone": "{{ company.phone }}",
         "email": "{{ company.email }}",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ company.address_it.street }}",
+            "addressLocality": "{{ company.address_it.city }}",
+            "addressRegion": "Lombardia",
+            "postalCode": "{{ company.address_it.postal_code }}",
+            "addressCountry": "IT"
+        },
+        "sameAs": ["{{ company.url }}"],
         "areaServed": {
             "@type": "AdministrativeArea",
             "name": "Lombardia"
@@ -126,7 +135,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© {{ year }} rossinienergy.it — Colonnine di ricarica e pensiline fotovoltaiche in Lombardia</p>
+                <p>© {{ year }} rossinienergy.it — Pensiline fotovoltaiche per parcheggi aziendali in Lombardia</p>
             </div>
         </div>
     </footer>
