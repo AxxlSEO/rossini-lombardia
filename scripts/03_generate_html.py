@@ -12,6 +12,7 @@ from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from scripts.config import *
+from scripts import variants as V
 
 try:
     from jinja2 import Environment, FileSystemLoader
@@ -184,65 +185,40 @@ def fmt_kwh(v):
 
 
 def build_faqs(city, solar_annual_str):
-    """4 FAQ par ville : 2 socles (dont une avec le chiffre PVGIS local)
-    + 2 conditionnelles selon les données réelles de la ville."""
+    """4-5 FAQ par ville : socle (production locale + tempi) en variantes stables,
+    + questions conditionnelles selon les données réelles, + compléments."""
     name = city["name"]
-    faqs = []
+    slug = city["slug"]
+    fmt = {"name": name, "annual": solar_annual_str}
 
+    def take(section, options):
+        q, a = V.pick(slug, section, options)
+        return {"q": q.format(**fmt), "a": a.format(**fmt)}
+
+    faqs = []
     if solar_annual_str:
-        faqs.append({
-            "q": f"Quanto produce una pensilina fotovoltaica a {name}?",
-            "a": (f"A {name}, un impianto da 30 kWp installato su pensilina produce circa "
-                  f"{solar_annual_str} kWh all'anno secondo i dati PVGIS, con un risparmio stimato "
-                  f"di 8.000-9.000 € l'anno sulla bolletta energetica."),
-        })
-    faqs.append({
-        "q": "Quanto tempo serve per l'installazione?",
-        "a": ("Dalla firma del contratto all'attivazione servono 8-12 settimane. Rossini Energy "
-              "gestisce progettazione, pratiche edilizie, installazione e allaccio alla rete."),
-    })
+        faqs.append(take("faq_prod", V.FAQ_PRODUZIONE))
+    faqs.append(take("faq_tempi", V.FAQ_TEMPI))
 
     extra = []
     industry = city.get("industry", {}) or {}
     pois = city.get("pois", {}) or {}
     code, _ = get_city_profile(city)
-
     if code == "F":
-        extra.append({
-            "q": "Anche enti pubblici possono installare pensiline fotovoltaiche?",
-            "a": (f"Sì. A {name} sedi comunali, scuole e ASL possono coprire i propri parcheggi con "
-                  "pensiline fotovoltaiche; Rossini Energy partecipa anche a procedure di gara pubblica."),
-        })
+        extra.append(take("faq_enti", V.FAQ_ENTI))
     if industry.get("industrial_zones_count", 0) > 50:
-        extra.append({
-            "q": "Le pensiline sono adatte alle aree industriali?",
-            "a": ("Sì. Le strutture TOSSO® in legno lamellare Douglas classe GL24h hanno certificazione "
-                  "statica per neve e vento e coprono anche grandi parcheggi industriali."),
-        })
+        extra.append(take("faq_ind", V.FAQ_INDUSTRIA))
     if industry.get("malls_count", 0) > 1 or industry.get("commercial_zones_count", 0) > 30:
-        extra.append({
-            "q": "Cosa cambia per un centro commerciale?",
-            "a": ("La pensilina offre riparo ai clienti, riduce la temperatura estiva delle auto e alimenta "
-                  "illuminazione e ricarica dei veicoli con l'energia prodotta dal parcheggio stesso."),
-        })
+        extra.append(take("faq_comm", V.FAQ_COMMERCIO))
     if pois.get("hotels_count", 0) > 10:
-        extra.append({
-            "q": "Una struttura ricettiva può beneficiarne?",
-            "a": (f"Sì. Hotel e ristoranti a {name} possono coprire una parte del fabbisogno con l'energia "
-                  "della pensilina e comunicare agli ospiti una scelta green visibile."),
-        })
-    extra.append({
-        "q": "Quali incentivi fiscali esistono per le aziende?",
-        "a": ("Le imprese possono ammortizzare l'investimento con gli incentivi in vigore, come "
-              "l'iperammortamento previsto dalla Legge di Bilancio 2026; Rossini Energy vi supporta nella pratica."),
-    })
-    extra.append({
-        "q": "Servono permessi edilizi?",
-        "a": ("In genere è sufficiente una CILA (Comunicazione di Inizio Lavori Asseverata). "
-              "Rossini Energy gestisce l'intera pratica burocratica."),
-    })
+        extra.append(take("faq_tur", V.FAQ_TURISMO))
+    for section, options in (("faq_inc", V.FAQ_INCENTIVI), ("faq_perm", V.FAQ_PERMESSI),
+                             ("faq_pmi", V.FAQ_PMI), ("faq_spazio", V.FAQ_SPAZIO),
+                             ("faq_manu", V.FAQ_MANUTENZIONE)):
+        extra.append(take(section, options))
 
-    return faqs + extra[:2]
+    total = 4 + (int(__import__("hashlib").md5(slug.encode()).hexdigest(), 16) % 2)
+    return (faqs + extra)[:total]
 
 
 def main():
@@ -267,6 +243,11 @@ def main():
     city_template = env.get_template("city_template.html")
     index_template = env.get_template("index_template.html")
 
+    intel_path = os.path.join(DATA_DIR, "local_intel.json")
+    intel = json.load(open(intel_path)) if os.path.exists(intel_path) else {}
+    content_path = os.path.join(DATA_DIR, "local_content.json")
+    local_content = json.load(open(content_path)) if os.path.exists(content_path) else {}
+
     year = datetime.now().year
     os.makedirs(os.path.join(OUTPUT_DIR, "citta"), exist_ok=True)
 
@@ -287,49 +268,60 @@ def main():
 
         # Normaliser la province
         province_normalized = normalize_province(city.get("province", ""))
-
-        # Fixer les URLs d'images
         image_url_fixed = fix_image_url(city.get("image_url", ""))
+        slug = city["slug"]
 
-        # Données solaires locales (PVGIS) — le différenciateur réel des pages
+        # Données solaires locales (PVGIS) — différenciateur réel
         solar = city.get("solar") or {}
         solar_annual = fmt_kwh(solar["annual_production_kwh"]) if solar.get("annual_production_kwh") else ""
-        solar_month_min = solar_month_max = ""
-        solar_month_min_name = solar_month_max_name = ""
+        solar_monthly = ""
         monthly = solar.get("monthly_production") or []
         if len(monthly) == 12:
-            mn, mx = min(range(12), key=lambda m: monthly[m]), max(range(12), key=lambda m: monthly[m])
-            solar_month_min, solar_month_min_name = fmt_kwh(monthly[mn]), MESI_IT[mn]
-            solar_month_max, solar_month_max_name = fmt_kwh(monthly[mx]), MESI_IT[mx]
+            mn = min(range(12), key=lambda m: monthly[m])
+            mx = max(range(12), key=lambda m: monthly[m])
+            solar_monthly = V.pick(slug, "solar_monthly", V.SOLAR_MONTHLY).format(
+                mmin=fmt_kwh(monthly[mn]), mmin_name=MESI_IT[mn],
+                mmax=fmt_kwh(monthly[mx]), mmax_name=MESI_IT[mx])
 
-        industrial_zones = (city.get("industry", {}) or {}).get("industrial_zones_count", 0)
+        prov_virgola = f", {province_normalized}" if province_normalized else ""
+        prov_parentesi = f" ({province_normalized})" if province_normalized else ""
+        fmt = {"name": city["name"], "prov_virgola": prov_virgola,
+               "prov_parentesi": prov_parentesi, "annual": solar_annual}
 
-        # SEO à pattern unique (title/H1 alignés, description différenciée par PVGIS)
-        seo_title = get_seo_title(city["name"])
-        seo_description = get_seo_description(city["name"], solar_annual)
-        h1_text = get_h1_text(city["name"])
-
-        # FAQ par ville (mêmes données pour le JSON-LD et la section visible)
-        faqs = build_faqs(city, solar_annual)
+        pois = city.get("pois", {}) or {}
+        ev = pois.get("ev_charging_stations", 0)
+        pois_options = V.POIS_P1_FEW if ev < 10 else V.POIS_P1_MANY
 
         html = city_template.render(
-            city=city,
-            company=COMPANY,
-            domain=DOMAIN,
-            year=year,
+            city=city, company=COMPANY, domain=DOMAIN, year=year,
             nearby_cities=nearby,
-            seo_title=seo_title,
-            seo_description=seo_description,
-            h1_text=h1_text,
-            faqs=faqs,
-            solar_annual=solar_annual,
-            solar_month_min=solar_month_min,
-            solar_month_min_name=solar_month_min_name,
-            solar_month_max=solar_month_max,
-            solar_month_max_name=solar_month_max_name,
-            industrial_zones=industrial_zones,
+            seo_title=get_seo_title(city["name"]),
+            seo_description=get_seo_description(city["name"], solar_annual),
+            h1_text=get_h1_text(city["name"]),
+            hero_subtitle=V.pick(slug, "hero", V.HERO_SUBTITLE).format(**fmt),
+            intro_p1=V.pick(slug, "p1", V.INTRO_P1).format(**fmt),
+            intro_p2=V.pick(slug, "p2", V.INTRO_P2).format(**fmt),
+            benefits=V.pick(slug, "benefits", V.BENEFITS).format(**fmt),
+            solar_p=V.pick(slug, "solar_p", V.SOLAR_P).format(**fmt),
+            solar_monthly=solar_monthly,
+            pois_p1=V.pick(slug, "pois1", pois_options).format(
+                name=city["name"], ev=ev, parking=pois.get("parking_count", 0)),
+            pois_p2=V.pick(slug, "pois2", V.POIS_P2).format(name=city["name"]),
+            nearby_intro=V.pick(slug, "nearby", V.NEARBY_INTRO).format(name=city["name"]),
+            cta_p=V.pick(slug, "cta", V.CTA_P).format(name=city["name"]),
+            services=V.pick(slug, "services", V.SERVICES),
+            section_order=V.pick(slug, "order", [
+                ["local", "solar", "pois"], ["solar", "local", "pois"], ["solar", "pois", "local"]]),
+            local_h2=V.pick(slug, "local_h2", [
+                "Il tessuto economico di {name}",
+                "{name}: il contesto per le imprese",
+                "Un territorio pronto per il fotovoltaico aziendale"]).format(name=city["name"]),
+            local_block=(local_content.get(slug) or "") if not isinstance(local_content.get(slug), dict)
+                        else local_content[slug].get("html", ""),
+            intel=intel.get(slug, {}),
+            faqs=build_faqs(city, solar_annual),
             province_normalized=province_normalized,
-            image_url_fixed=image_url_fixed
+            image_url_fixed=image_url_fixed,
         )
 
         output_path = os.path.join(OUTPUT_DIR, "citta", f"{city['slug']}.html")

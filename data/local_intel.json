@@ -1,0 +1,1103 @@
+{
+ "milano": {
+  "istat": {
+   "unita_locali": 228428,
+   "anno": "2023",
+   "addetti": 1021934,
+   "codice": "015146"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Deposito ATM Giambellino",
+    "Deposito ATM di Viale Sarca",
+    "Deposito ATM Via Novara",
+    "Deposito ATM Palmanova",
+    "Centrale Elettrica A2A",
+    "Deposito ATM Baggio"
+   ],
+   "centri_commerciali_nomi": [
+    "Eataly Smeraldo",
+    "CityLife Shopping District",
+    "Centro Commerciale Bonola",
+    "Centro Commerciale PiazzaLodi"
+   ]
+  },
+  "wikipedia_economia": "miniatura|sinistra|Via Monte Napoleone, prestigiosa via del [[quadrilatero della moda]] Durante la sua storia, Milano ha spesso anticipato le linee di tendenza dell'economia della penisola: una robusta agricoltura e un diffuso artigianato con scambi commerciali intensi fin dal Medioevo e nel Rinascimento, sfruttamento delle risorse idriche e sviluppo delle comunicazioni nel periodo protoindustriale e diffusione spinta delle attività manifatturiere, anche le più pesanti, durante l'industrializzazione, con una particolare attenzione alle attività bancarie e finanziarie. miniatura|[[Palazzo Mezzanotte, sede della Borsa Italiana]] Dalla seconda metà del secolo scorso ha anticipato il processo di terziarizzazione dell'economia nazionale puntando sul prevalere sempre più marcato di un terziario avanzato in diverse direzioni, dalle tradizionali alle innovative: finanza, commerci nazionali e internazionali, direzioni aziendali, editoria, design industriale, pubblicità, intrattenimento, ricerca scientifica, biotecnologia, informatica, attività universitarie, moda, design, società di marketing e media televisivi. Milano, sede della Borsa Italiana, quinta in Europa e nona al mondo, è il principale centro finanziario e il più importante polo economico del Paese con un reddito pro capite di circa €. Il prodotto interno lordo totale generato dalla città di Milano si attesta invece a miliardi di euro. In pratica Milano da sola genera il 5% dell’intero PIL dell’Italia, registrando un PIL pro capite di € superiore alla media europea di €. miniatura|[[Piazza del Duomo (Milano)|Piazza del Duomo, tipica meta dei turisti in visita a Milano]] thumb|left|[[Basilica di Sant'Eustorgio|Basilica e convento di Sant'Eustorgio. All'interno della basilica sono conservate alcune reliquie dei Magi]] miniatura|[[Ultima Cena (Leonardo)|L'ultima cena di Leonardo da Vinci, patrimonio dell'umanità UNESCO]] Nelle classifiche delle città più visitate del mondo nel 2018 Milano si conferma al quinto posto in Europa per numero di turisti dall'estero. Secondo La classifica di Global Destination Cities di Mastercard relativa alle presenze di turisti e lavoratori, Milano si attesta a circa 9,1 milioni di presenze, come 16ª città più visitata al mondo, 5ª d'Europa e 2ª d'Italia dopo Roma. Secondo una classifica che si basa invece sui turisti internazionali, Milano, a livello mondiale, si attesta alla 24ª posizione seguendo Roma alla 14ª. La sua attrattiva è data dal suo essere un importante centro econ",
+  "wikidata_aziende": [],
+  "_complete": true
+ },
+ "brescia": {
+  "istat": {
+   "unita_locali": 26287,
+   "anno": "2023",
+   "addetti": 100939,
+   "codice": "017029"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Fonderie San Zeno",
+    "Ricevitrice Sud",
+    "Flero",
+    "Area artigianale di Folzano",
+    "Area Artigianale di Flero",
+    "Ricevitrice Est BS"
+   ],
+   "centri_commerciali_nomi": [
+    "Le Piazzette",
+    "La Casa di Margherita D'Este",
+    "Centro Commerciale iperTosano",
+    "Gallerie Bennet"
+   ]
+  },
+  "wikipedia_economia": "L'economia cittadina si divide tra industria, commercio, artigianato, servizi, agricoltura e turismo. Come gran parte dell'economia del nord Italia, il complesso bresciano è costituito soprattutto da piccole-medie imprese, con la presenza di grandi industrie, che vanno dal settore alimentare a quello metalmeccanico. min|Il vigneto Pusterla visto dal castello La viticoltura è considerata il comparto agricolo più importante del sistema agroalimentare bresciano. Il territorio comunale di Brescia rientra nella zona di produzione di diversi vini: una tipologia a denominazione di origine controllata e garantita, ovvero il Franciacorta, tre vini DOC (Botticino, Cellatica e Curtefranca) e un vino IGT (Ronchi di Brescia). Inoltre, nel centro storico della città, lungo il versante settentrionale del Colle Cidneo, si estende il vigneto urbano più grande d'Europa, chiamato Vigneto Pusterla, caratterizzato dalla coltivazione dell'Invernenga, vitigno autoctono a bacca bianca presente a Brescia fin dall'epoca romana. Proprio a Brescia sorge uno dei più stimati istituti del nord Italia: l'Istituto tecnico agrario statale Pastori che indirizza numerosi studenti all'attività agricola con il diploma di Perito agrario. La Confindustria locale, lAssociazione Industriale Bresciana (AIB), è stata la prima associazione industriale fondata in Italia il 14 aprile 1897. Secondo lo studio sulle province UE a maggiore vocazione produttiva commissionato da Fondazione Edison e Confindustria nell'anno 2016, Brescia risulta essere la prima provincia Europea per valore aggiunto dall'industria, un valore corrispondente a più di 10 miliardi di euro. A Brescia, sempre secondo questo studio, più del 30% degli occupati risulta essere concentrato nel settore industriale. Importante è la produzione di mezzi di trasporto, una su tutte l'OM, che ha sede sul territorio cittadino e produce i camion Iveco. Degna di nota è la fabbrica di birra più antica d'Italia, la Wührer. Negli ultimi quaranta anni è aumentata l'importanza dei settori bancario, commerciale e della comunicazione. Tra le aziende cittadine più quotate vi è il gruppo A2A (frutto della fusione tra ASM Brescia, AEM Milano ed AMSA) e la Centrale del Latte di Brescia, controllata dall'amministrazione cittadina. Vi sono anche le filiali di banche ed attività finanziarie. Negli ultimi anni, a seguito del processo di aggregazione bancaria, la città ha perso la sede delle sue due principali banche: Bipop-Carire, parte del gruppo Unicredit, e Ba",
+  "wikidata_aziende": [
+   "Giornale di Brescia",
+   "Media Prime",
+   "Palazzoli",
+   "Brescia Mobilità",
+   "Metro Brescia",
+   "Brescia Infrastrutture",
+   "Editoriale Bresciana"
+  ],
+  "_complete": true
+ },
+ "monza": {
+  "istat": {
+   "codice": "015149"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Autodemolizioni Mauro",
+    "Rovagnati",
+    "Ex Cotonificio Fossati Lamperti",
+    "ex tintoria De Simoni",
+    "Gusmar",
+    "Centrale idroelettrica di San Rocco"
+   ],
+   "centri_commerciali_nomi": [
+    "Centro Commerciale Rondò dei Pini"
+   ]
+  },
+  "wikipedia_economia": "L'agricoltura, basata su coltivazioni di cereali, ortaggi e foraggi, ha decisamente perso terreno rispetto all'industria, che fa registrare un notevole sviluppo dei comparti meccanico e tessile, seguiti da quelli chimico, edile e lattiero-caseario. Il terziario si compone di una buona rete commerciale e dell'insieme dei servizi, che comprendono quello bancario, assicurazioni e attività radiotelevisive nonché di consulenza informatica. Nel settore dell'artigianato è ancora diffusa e rinomata l'antica lavorazione e realizzazione di mobili in serie.",
+  "wikidata_aziende": [
+   "Sol",
+   "Elesa",
+   "Aznom",
+   "Atala",
+   "Veos S.p.A.",
+   "Libraccio",
+   "MILITEM",
+   "I fiori di Lórien"
+  ],
+  "_complete": true
+ },
+ "bergamo": {
+  "istat": {
+   "unita_locali": 19002,
+   "anno": "2023",
+   "addetti": 64223,
+   "codice": "016024"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Kilometro rosso",
+    "Arti Grafiche",
+    "Bergamo scalo",
+    "Deposito Autostrade per l'Italia di Bergamo",
+    "ATB",
+    "Area insediamenti produttivi \"Emilio Mazzoleni\""
+   ],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "Come gran parte dell'economia del nord Italia, il complesso bergamasco è costituito soprattutto da piccole-medie imprese, con la presenza di grandi industrie, che vanno dal settore alimentare a quello metalmeccanico. Gli spazi agricoli rimasti nell'area del comune di Bergamo sono pochi, e prevalentemente dedicati alla produzione di mais e di foraggio. Sono presenti alcune aziende di apicoltura. Sono presenti in città alcuni artigiani del legno, del ferro, e dei tessuti. thumb|La sede storica della Banca Popolare di Bergamo in piazza Vittorio Veneto Secondo lo studio sulle province UE a maggiore vocazione produttiva commissionato da Fondazione Edison e Confindustria nell'anno 2016, Bergamo risulta essere la seconda provincia Europea per valore aggiunto dall'industria, dietro a Brescia e davanti a Wolfsburg nel podio, con un valore corrispondente a circa 10 miliardi di euro. A Bergamo, sempre secondo questo studio, circa il 35% degli occupati risulta essere concentrato nel settore industriale. In passato, nel comune di Bergamo avevano sede numerose industrie, quasi tutte trasferite nel circondario. La maggior parte si basava sull'uso dell'acqua delle rogge per la produzione tessile, installate in città nel periodo austroungarico (1814-1859). Le aziende principali residenti in città sono: * Italcementi SpA, quartier generale della quinta azienda a livello mondiale per la produzione di materiali da costruzione, in particolare cemento e derivati. * Brembo, quartier generale e stabilimenti di produzione di impianti frenanti per veicoli ad alte prestazioni. * Gewiss, società che opera a livello internazionale nella produzione di sistemi e componenti per la domotica, l'energia e l'illuminotecnica. * Tenaris, produzione e fornitura di tubi e servizi per l'esplorazione e la produzione di petrolio e gas. * ABB SpA, produzione di interruttori industriali. * Lovato Electric SpA, produzione di componenti elettrici in bassa tensione per applicazioni industriali e soluzioni per l'energy management. Negli ultimi quaranta anni è aumentata l'importanza dei settori bancario, commerciale e della comunicazione. Il settore dei servizi è trainante in città, come in ogni economia del terziario avanzato. thumb|right|Bergamo in una guida [[Baedeker (guida)|Baedeker del 1906]] L'attrattività turistica della città ha fortemente beneficiato della crescita del vicino aeroporto di Bergamo-Orio al Serio grazie alle compagnie a basso costo (Ryanair), pertanto i flussi turistici, pressoché ",
+  "wikidata_aziende": [
+   "Atlas",
+   "3V Sigma",
+   "Anonima BOLIS",
+   "Via Condotti",
+   "BEFeD",
+   "SUNTRADING SPA"
+  ],
+  "_complete": true
+ },
+ "como": {
+  "istat": {
+   "unita_locali": 10521,
+   "anno": "2023",
+   "addetti": 44340,
+   "codice": "013075"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Akzo Nobel",
+    "Termovalorizzatore di Como",
+    "Zona Industriale di Via Roma"
+   ],
+   "centri_commerciali_nomi": [
+    "Centro Commerciale Sagnino Centro",
+    "Esselunga della Ca' Merlata",
+    "Lario Center",
+    "Centro Commerciale Como Alta"
+   ]
+  },
+  "wikipedia_economia": "Sin dal Medioevo il territorio comasco ha avuto una notevole vocazione tessile, in particolare tra l'XI e il XVII secolo dominava il lanificio (con concentrazioni quasi industriali nei borghi comaschi lungo il Cosia, come l'attuale via Pannilani, e nel vicino centro di Torno). Nel corso del XIV e XV secolo il tessile comasco si specializzò in lane di uso comune, fustagni e tessuti economici, parallelamente però iniziò a diffondersi, verso la fine del Quattrocento, l'industria serica. Nel corso del Seicento il lanificio italiano, e comasco, attraversò un periodo di forte contrazione e crisi, subendo la concorrenza dei tessili nord-europei, mentre la produzione di sete resse, e nel corso del Settecento, soprattutto come seta greggia e semilavorata prodotta nelle immediate vicinanze della città, crebbe. Nel corso del XIX secolo, soprattutto dopo l'unificazione nazionale, il settore tessile comasco iniziò a mostrare segni di dinamismo, con una precoce industrializzazione e una certa capacità di attrazione di capitali esteri. Al principio del Novecento Como era una città a forte vocazione industriale con un ampio spettro di sotto settori specifici (stampa su tessuto, cravatte, sete pregiate, calze, tessuti generici, dopo la seconda guerra mondiale anche disegno per tessuti, moda e coloranti per tessuti); questa crescita avvenne anche ponendo in crisi e facendo una feroce concorrenza alle realtà industriali del nord Europa (inglesi, olandesi e francesi) che due secoli prima aveva soppiantato l'Italia nel primato dell'industria tessile. Il settore conobbe però una dura crisi, da cui non si è più del tutto ripreso (soprattutto per numero di addetti) all'inizio degli anni 1990, seguita da altre contrazioni; nel territorio comasco e nei comuni circumvicini è però ancora allocata una forte presenza di industrie tessili, anche se quelle specializzate su prodotti di alta gamma, di lusso o di marca hanno attraversato il trentennio di contrazione con una maggiore capacità di adattamento e con prospettive migliori. L'edizione 2013 del Rapporto annuale sull'economia comasca del servizio Studi e Statistica della Camera di Commercio di Como offre uno spaccato puntuale dell'economia dell'area. Analizzando la consistenza delle imprese attive per settore di attività, si rileva la prevalenza del comparto del terziario, con unità attive e un'incidenza in crescita pari al 60% del totale. Seguono per importanza le costruzioni ( unità, con un peso sotto il 20%) e il manifatturiero (",
+  "wikidata_aziende": [
+   "Taroni",
+   "Chicco",
+   "Mantero",
+   "Fisac",
+   "Società Idroelettrica Subalpina",
+   "Lechler",
+   "Fumagalli 1891"
+  ],
+  "_complete": true
+ },
+ "busto-arsizio": {
+  "istat": {
+   "unita_locali": 8486,
+   "anno": "2023",
+   "addetti": 27025,
+   "codice": "012026"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Terminal Intermodale di Sacconago",
+    "Ercole Comerio",
+    "Elly",
+    "Mario Crosta",
+    "Deposito STIE Busto Arsizio",
+    "Termovalorizzatore ACCAM"
+   ],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "thumb|Cascina Burattana thumb|Un bozzolo Il modello economico di Busto Arsizio è cambiato negli anni passando da prevalentemente agricolo a industriale fino a vedere negli ultimi decenni la crescita del settore terziario. Secondo Fitch il PIL pro-capite nel 2009 era superiore del 20% rispetto alla media europea mentre la disoccupazione si attestava al 4%. Il ramo industriale principale è quello del tessile, che affonda le sue radici nei primi secoli dell'età moderna. Il suolo di Busto Arsizio non è mai stato particolarmente favorevole all'agricoltura. Per questo gli abitanti del luogo, fin dalle origini, dovettero affiancarvi altre attività, come la concia delle pelli nell'Alto Medioevo. Ciò nonostante il settore primario rimase quello predominante fino almeno al XVI secolo. I raccolti più importanti erano quelli di cereali e vino. Una delle ultime realtà del patrimonio agricolo comunale è la Cascina Burattana, angolo verde situato da quattro secoli a nord del quartiere. Costruita nel Seicento di proprietà della famiglia nobiliare Durini, è stata acquistata dal comune di Busto Arsizio, insieme ai suoi terreni, negli anni novanta del XX secolo. I terreni, dati in uso a una cooperativa sociale, sono in fase di certificazione biodinamica. Gli stabili sono soggetti a forte degrado. L'allevamento del baco da seta (i bigàti) fu praticato nell'Altomilanese da tempo immemorabile. Fino all'avvento delle prime fibre artificiali (anni trenta del XX secolo) che portò al crollo del prezzo della seta sul mercato, l'Alto Milanese era la capitale della bachicoltura italiana, una delle prime al mondo. Si tratta di una tradizione secolare, che risale alla fine del Medioevo, e che era praticata in modo massivo nelle famiglie bustesi. Tale attività fu una di quelle che contribuirono a trasformare Busto Arsizio nella «Manchester d'Italia», Diffusa a Busto Arsizio è la lavorazione del peltro, finalizzata alla produzione di oggetti artistici, monili, trofei, vassoi e piatti. thumb|Due delle \"cento\" ciminiere di Busto Arsizio appartenenti al cotonificio \"Giovanni Milani & Nipoti\" Busto Arsizio è stata per anni uno dei più importanti centri tessili d'Italia, tanto da essere conosciuta anche all'estero. Già agli inizi dell'800 vi troviamo la ditta \"Benigno Crespi\", appartenente a una famiglia di lunga tradizione bustocca, soprannominata dei \"Tengitt\". Furono proprio Cristoforo Benigno Crespi e suo figlio Silvio Benigno che vollero costruire Crespi d'Adda, un villaggio operaio domin",
+  "wikidata_aziende": [
+   "Rezzara Scuole",
+   "Carmimari",
+   "Comerio Ercole",
+   "Nomos",
+   "Agesp",
+   "Associazione Consortile dei Comuni dell'Alto Milanese",
+   "EOLO",
+   "Ente Azienda Socio Sanitaria Territoriale della Valle Olona"
+  ],
+  "_complete": true
+ },
+ "sesto-san-giovanni": {
+  "istat": {
+   "unita_locali": 6532,
+   "anno": "2023",
+   "addetti": 27816,
+   "codice": "015209"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Centrale Termoelettrica di Sesto San Giovanni",
+    "Deposito Caronte",
+    "Complesso aziendale Mazzini 33",
+    "Inceneritore CORE",
+    "Italfarmaco"
+   ],
+   "centri_commerciali_nomi": [
+    "Centro Commerciale Vulcano"
+   ]
+  },
+  "wikipedia_economia": "Dal Medioevo al XIX secolo Sesto era un borgo contadino con grandi cascine. È nel 1840 che aprono le prime filande sestesi, che alla fine del secolo danno occupazione a circa 800 persone. A cavallo tra Ottocento e Novecento comincia infatti l'industrializzazione sestese: alcuni imprenditori milanesi (Breda, Camona, Marelli, Spadaccini) hanno necessità di spostare dal capoluogo lombardo i propri stabilimenti e Sesto fa al caso loro: il territorio sestese offre ampi spazi per imprese sempre più grandi e moderne, terreni a prezzi più bassi e di ottima qualità perché lontani dalle marcite della bassa milanese; frequenti e comodi collegamenti con Milano grazie a tranvia e ferrovia con scalo merci, grazie alla quale venivano raggiunte le regioni del centro Europa. Le aziende che iniziano le attività produttive a Sesto San Giovanni necessitano di manodopera in abbondanza e gran parte dei primi operai sono pendolari che dal Lecchese, dal Comasco, dal Bresciano e dal Bergamasco arrivano a Sesto grazie alla ferrovia. Da Milano invece, arrivano in tram i tecnici che studiano e progettano i futuri stabilimenti produttivi. Nei primi 20 anni del Novecento aprono a Sesto San Giovanni moltissime imprese: nel 1903 la Breda e lo stabilimento Campari; due anni dopo è la volta della Ercole Marelli, delle Edizioni Madella, delle fonderie di ghisa di Attilio Franco e di Luigi Balconi, dello stabilimento di Pompe Gabbioneta e delle corderie Luigi Spadaccini. Nel 1906 aprono gli stabilimenti delle Acciaierie e Ferriere Lombarde Falck e nel 1910 la Società italiana dei prodotti alimentari Maggi. min|Lo Stabilimento Vittoria delle Acciaierie e Ferriere Lombarde Falck. Con l'apertura delle prime fabbriche avviene un incremento della popolazione: nel 1901 gli abitanti sono 6.952, dieci anni dopo raggiungono le 13.667 unità. Questo aumento favorisce, parallelamente, lo sviluppo urbanistico della città: tra il 1903 e il 1911 nasce la Sesto nuova, a ovest della ferrovia, attorno al Rondò. Alcuni degli imprenditori che a Sesto hanno partecipato all'industrializzazione contribuiscono in modo determinante alla crescita urbanistica della cittadina. Ernesto Breda e Luigi Spadaccini, tra quelle che sono le attuali via Rovani, via Cattaneo e via Carducci, costruiscono complessi abitativi per i propri operai e impiegati. La Falck costruisce il Villaggio Falck, ampliando l'originario villaggio operaio delle fonderie Attilio Franco. Questa tendenza perdura sino al 1940 circa: per poter disporre d",
+  "wikidata_aziende": [
+   "Mimesis",
+   "Falck",
+   "Pompe Gabbioneta",
+   "Edizioni Bignami",
+   "Osva",
+   "ASST Nord Milano"
+  ],
+  "_complete": true
+ },
+ "varese": {
+  "istat": {
+   "unita_locali": 9365,
+   "anno": "2023",
+   "addetti": 29657,
+   "codice": "012133"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "BTicino",
+    "MV Agusta Motor Spa",
+    "Industria Casearia Prealpi",
+    "Azienda Serraglia",
+    "Ingelva S.r.l.",
+    "Siderurgica Varesina sas"
+   ],
+   "centri_commerciali_nomi": [
+    "Centro Commerciale Le Corti"
+   ]
+  },
+  "wikipedia_economia": "Importante centro industriale lombardo, nel suo hinterland sono ubicate alcune importanti aziende a livello nazionale e mondiale. * Aermacchi (aeronautica e motociclette) * Bticino (apparecchiature elettriche) * MV Agusta (motociclette) * Cagiva (motociclette) * Ignis (poi Whirlpool) * Prealpi (burro e formaggi) * Vodafone Automotive (automotive) Varese è rinomata anche per la lavorazione artigianale del vimini finalizzata alla produzione di ceste e canestri.",
+  "wikidata_aziende": [
+   "Vip Italia",
+   "Biciclette Ganna",
+   "Paul & Shark",
+   "SCAM Spa",
+   "Consorzio Trasporti Pubblici Insubria",
+   "BTicino",
+   "Kite Solutions",
+   "Prealpi"
+  ],
+  "_complete": true
+ },
+ "cinisello-balsamo": {
+  "istat": {
+   "unita_locali": 5257,
+   "anno": "2023",
+   "addetti": 23116,
+   "codice": "015077"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Italfarmaco",
+    "Centrale di stoccaggio gas di Brugherio"
+   ],
+   "centri_commerciali_nomi": [
+    "Centro Commerciale La Fontana"
+   ]
+  },
+  "wikipedia_economia": "Una delle attività storiche caratteristiche di Cinisello e Balsamo è stata la coltivazione di gelsi, per l'allevamento di bachi da seta (qui conosciuti come cavalee), protrattasi fino agli anni venti, per scomparire definitivamente intorno agli anni quaranta. L'importanza che questa pratica aveva in questi territori può essere desunta dal fatto che in passato avveniva un vero e proprio censimento delle piante di gelso: quello del 16 novembre 1750 riporta per esempio un numero di 961 gelsi presenti a Cinisello (per un imponibile di 70.195 scudi) e di 1.232 gelsi a Balsamo (per un imponibile di 61.025 scudi). La coltivazione dei gelsi era già praticata nel secolo precedente: nel 1637 viene riportato che la piazza comunale di Cinisello fosse già circondata da 45 gelsi. min|sinistra|L'[[Accomandita Lombarda Essiccatoi Automatici|A.L.E.A. in piazza Gramsci; sullo sfondo la Villa Ghirlanda Silva. Si noti la macelleria, ancora presente.]] Fra la metà del XIX secolo e gli inizi del XX secolo si contavano sul territorio di Cinisello tre filande, una in contrada per Monza (nel XXI secolo via Sant'Ambrogio) È a partire dagli anni trenta del Novecento che la popolazione cittadina comincia ad essere attratta prima dalle fabbriche che si stavano sviluppando a Sesto San Giovanni, poi da quelle della periferia a nord di Milano. La popolazione comincia a diventare prevalentemente operaia; all'indomani della Seconda guerra mondiale comincia il fortissimo sviluppo edilizio che vede via via la città gravitare sempre di più attorno a Milano, di cui può definirsi un quartiere satellite. L'agricoltura viene quasi del tutto abbandonata e si sviluppa un fenomeno di pendolarismo fra i luoghi di lavoro, collocati al di fuori della città, e la città stessa, la cui funzione prevalente diventa quasi quella di dormitorio. Cinisello Balsamo stessa conosce comunque un deciso sviluppo della piccola industria e dell'artigianato: le ditte censite passano così dalle 341 del 1951 alle 956 del 1961, fino ad arrivare alle 2056 del 1971. Prima d'allora risultavano attive sul territorio - oltre alle già citate filande - alcune industrie che lavoravano il legname e due ditte di prodotti alimentari (un pastificio e una fabbrica di prosciutti). A partire dagli anni settanta si cercò inoltre di sviluppare ulteriori poli di produzione locale, privilegiando l'insediamento ai margini della città di alcuni distretti di produzione leggera, ancora attivi sul territorio. Alla chiusura delle grandi fabbriche ",
+  "wikidata_aziende": [
+   "Tajmac MTM",
+   "Trivella",
+   "Edizioni Clandestine",
+   "Dahua Technology Italy",
+   "Geico",
+   "Edizioni San Paolo",
+   "Silvana Editoriale"
+  ],
+  "_complete": true
+ },
+ "cremona": {
+  "istat": {
+   "unita_locali": 6668,
+   "anno": "2023",
+   "addetti": 26403,
+   "codice": "019036"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Tamoil",
+    "Porto di Cremona",
+    "Vergani secondo SPA",
+    "Bosini S.R.L.",
+    "ARRIVA SPA",
+    "Termovalorizzatore di Cremona"
+   ],
+   "centri_commerciali_nomi": [
+    "Europe Land S.R.L.",
+    "Cremona Po"
+   ]
+  },
+  "wikipedia_economia": "verticale|min|sinistra|Liuteria di fronte al duomo L'economia della città è legata al sistema produttivo provinciale a prevalenza agricola. Oltre alle aziende agricole sono presenti importanti industrie alimentari italiane: salumi (Negroni), dolciumi (Sperlari, Vergani, Barilla - Mulino Bianco), oli vegetali (Oleificio Zucchi), formaggi (Auricchio). Vi è inoltre l'industria metalmeccanica (acciaieria Arvedi, Off. Mecc. Feraboli, Parmigiani Macchine e OCRIM), petrolifera (ex raffineria Tamoil, ora adibita a deposito, sede e deposito Keropetrol), energetica (LGH), telecomunicazioni (A2A Smart City). L'artigianato cremonese è caratterizzato dalle botteghe di liutai, specializzate nella produzione di strumenti ad arco, riconosciute a livello mondiale per la qualità degli strumenti prodotti e che si riallacciano alle figure di Stradivari, Guarneri e Amati. La cultura della liuteria tradizionale cremonese è stata iscritta il 5 dicembre 2012 nella lista rappresentativa del patrimonio culturale immateriale dell'UNESCO. Inoltre, sono ancora diffuse e rinomate le antiche lavorazioni della ceramica e della porcellana. Cremona è conosciuta anche come produttrice di dolciumi, con il suo famoso torrone, di materiale in cotto ed altri oggetti. Il porto canale è utile all'approdo delle chiatte che percorrono il fiume Po. Il canale, che da Cremona avrebbe dovuto raggiungere Milano, si ferma dopo soli , presso Pizzighettone.",
+  "wikidata_aziende": [
+   "TeleColor",
+   "Green Energy for Steel",
+   "Linea Green S.p.A.",
+   "Keropetrol",
+   "A. Betri e Calzolari Fotografi",
+   "Sperlari",
+   "Auricchio",
+   "Autostrade Centropadane"
+  ],
+  "_complete": true
+ },
+ "pavia": {
+  "istat": {
+   "unita_locali": 8315,
+   "anno": "2023",
+   "addetti": 24954,
+   "codice": "018110"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Savio Industrial",
+    "Enel",
+    "Aníbal Nunes",
+    "Ecocentro de Mora",
+    "Poste Italiane"
+   ],
+   "centri_commerciali_nomi": [
+    "Mercato Ipogeo"
+   ]
+  },
+  "wikipedia_economia": "Il 63,3% della superficie del comune di Pavia (circa 4.000 ettari) è destinata all’agricoltura e in particolare alla coltivazione del riso (circa 2.400 ettari), diffusasi, a partire dal XV secolo, prevalentemente nei terreni paludosi sino a divenire, soprattutto dal XVIII secolo, la principale coltivazione. Le grandi quantità d'acqua richieste per il riso ha fatto sì che nel corso dei secoli sia stata progettata e realizzata una fittissima rete d'irrigazione che ancor oggi caratterizza il paesaggio della campagna pavese. Va poi evidenziato che la città è capoluogo della provincia italiana con la più grande produzione di riso del paese: oltre 84.000 ettari del suolo provinciale sono destinati a risaie. Le altre colture presenti all’interno del territorio comunale sono quelle del mais e del grano (1.376 ettari), i pioppeti (636 ettari), mentre superfici molto limitate sono destinate ai prati (158 ettari), ai frutteti e agli orti (29,30 ettari). Sempre all'interno del territorio del comune di Pavia sono ancora attive quasi una cinquantina di cascine (aziende agricole) destinate all'attività agricola, 18 di esse ospitano allevamenti bovini, dove vengono allevati circa 820 capi. Nel settore dell'artigianato sono molto diffuse e rinomate la produzione artigianale di attrezzi agricoli e la lavorazione del metallo. Inoltre sono significative le lavorazioni del ferro battuto finalizzata agli edifici pubblici, quella della ceramica e della porcellana. La città conobbe un forte sviluppo dell’industria a partire dagli anni’80 dell’Ottocento, tanto che ospitò anche stabilimenti di importanza nazionale, come la Necchi o la prima grande fabbrica italiana di seta artificiale e tessuti sintetici, la Snia Viscosa, sorta nel 1905. Nel 1951 quasi il 27% della forza lavoro di Pavia era addetta al settore industriale. A partire dagli anni ’70 del XX secolo la città subì una repentina deindustrializzazione che portò alla chiusura di molte aziende, soprattutto quelle dei settori chimico e meccanico, mentre conobbero sviluppo quelle legate al settore alimentare, come la Riso Scotti, le aziende farmaceutiche e quelle legate alla filiera del packaging. Fortemente in crescita è, infine, il settore della microelettronica che, grazie alla collaborazione tra università e operatori privati, ha visto nascere a Pavia un micro-distretto ad alta specializzazione che offre lavoro a oltre 500 ingegneri elettronici e dottori di ricerca, tanto che anche alcune grandi aziende del settore, come la",
+  "wikidata_aziende": [
+   "Necchi",
+   "Mateba",
+   "Delete",
+   "PAGEPress Publications",
+   "Riso Scotti",
+   "Italian Championship Wrestling",
+   "Azienda di Servizi alla Persona di Pavia",
+   "Plasmore"
+  ],
+  "_complete": true
+ },
+ "vigevano": {
+  "istat": {
+   "unita_locali": 5585,
+   "anno": "2023",
+   "addetti": 18361,
+   "codice": "018177"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Zona Commerciale di Vigevano",
+    "Stav",
+    "Area industriale Corso Novara"
+   ],
+   "centri_commerciali_nomi": [
+    "Centro Commerciale Il Ducale"
+   ]
+  },
+  "wikipedia_economia": "Vigevano è da secoli uno dei poli di riferimento per quanto riguarda la manifattura lombarda e italiana: fu Ludovico il Moro a introdurre nel capoluogo lomellino l'industria della seta, che accanto alla già consolidata tradizione laniera contribuirà ad assegnare una fisionomia ben definita a uno dei principali centri industriali dell'Italia settentrionale. Il settore più importante dell'economia vigevanese è tuttavia quello calzaturiero, con produzione di scarpe, accessori, materiali e macchine per calzature. Già attiva nella seconda metà del XIX secolo, la manifattura calzaturiera cominciò ad affermarsi durante la prima guerra mondiale, per raggiungere l'apice durante gli anni cinquanta, in contemporanea all'esportazione di decine di milioni di scarpe in Italia e all'estero che permisero a Vigevano di guadagnarsi il titolo di capitale della calzatura. Nei decenni successivi, in particolare a partire dagli anni '70, con il progressivo spostamento della produzione verso i paesi in via di sviluppo e una forte concorrenza interna ebbe inizio una crisi sempre più profonda del settore. Nonostante ciò la città e i comuni limitrofi costituiscono ancora oggi uno dei riferimenti per l'industria calzaturiera italiana, grazie anche a una specializzazione nel meccano-calzaturiero che ha portato Vigevano a essere leader mondiale nella produzione di macchinari per calzature. L'agricoltura è principalmente incentrata sulla produzione del riso, vista l'ampia diffusione delle risaie in Lomellina. È inoltre da segnalare che la vicina Cassolnovo è indicata come probabile sede della prima risaia italiana. Dal 1961 al 1984 ha operato a Vigevano la fabbrica di televisori Mäkelä. Dagli inizi del 2010 fino ad oggi, Vigevano risulta tra le città più povere della Lombardia, con un PIL pro capite di circa euro e la disoccupazione sempre presente. Si stima che circa il 40% della popolazione sia a rischio povertà causata da stipendi troppo inferiori alla media e prezzi troppo elevati per lo standard di vita della città. Il 45% della popolazione lavora fuori città.",
+  "wikidata_aziende": [
+   "Comelz"
+  ],
+  "_complete": true
+ },
+ "legnano": {
+  "istat": {
+   "unita_locali": 6221,
+   "anno": "2023",
+   "addetti": 21042,
+   "codice": "015118"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Ex Manifattura di Legnano",
+    "Tenova • Gruppo Techint",
+    "Fap Srl",
+    "Croce Rossa Italiana - Sala Operativa Nazionale",
+    "Deposito STIE e Movibus di Legnano",
+    "Franco Tosi Meccanica"
+   ],
+   "centri_commerciali_nomi": [
+    "Gallerie Cantoni",
+    "Granbrico"
+   ]
+  },
+  "wikipedia_economia": "thumb|Area agricola nei pressi del quartiere legnanese di Mazzafame L'agricoltura legnanese è stata la base dello sviluppo economico del territorio. Per prima è stata investita dal processo di meccanizzazione e ristrutturazione. La meccanizzazione, grazie all'utilizzo di macchinari sempre più complessi, ha portato a un incremento della produzione agricola. Nel XXI secolo non rappresenta più un'attività importante per l'economia legnanese. Le poche aree libere da costruzioni e infrastrutture sono coltivate a cereali, principalmente grano e mais. L'età dell'oro dell'industria legnanese cominciò all'inizio del XX secolo e terminò negli anni sessanta dello stesso secolo. La crisi peggiorò progressivamente danneggiando l'economia, l'occupazione e il tessuto industriale. Molte aziende chiusero, soprattutto nel tessile, nell'abbigliamento e nella calzatura, e molte altre furono coinvolte in un processo di ridimensionamento. Tra gli anni ottanta e gli anni novanta si ebbe un vero e proprio fenomeno di deindustrializzazione del territorio, che non fu accompagnato dalla nascita di nuove attività. Si tentò quindi di puntare al settore terziario.",
+  "wikidata_aziende": [
+   "Marabese",
+   "ASPESI",
+   "Officine Ranzi",
+   "Edicart Style",
+   "Alto Milanese Gestioni Avanzate",
+   "Famiglia Legnanese",
+   "Franco Tosi Meccanica",
+   "ASST Ovest Milanese"
+  ],
+  "_complete": true
+ },
+ "gallarate": {
+  "istat": {
+   "unita_locali": 6606,
+   "anno": "2023",
+   "addetti": 24276,
+   "codice": "012070"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Tonetti Manifattura Tessile",
+    "Silvio Fossa Spa",
+    "AMSC",
+    "Officine Meccaniche Gallaratesi",
+    "Tessitura Marco Pastorelli Spa",
+    "Centro Polifunzionale Emergenza"
+   ],
+   "centri_commerciali_nomi": [
+    "Torre del Seprio",
+    "Carrefour Malpensa Uno",
+    "Centro Laghi",
+    "Centro Commerciale Madonna in Campagna"
+   ]
+  },
+  "wikipedia_economia": "La posizione geografica di Gallarate, che lega la città ai centri di Varese e di Milano, l'ha resa principalmente un centro industriale. Inizialmente il settore d'attività principale era quello tessile, ma ad oggi l'attività si trova in un forte periodo di crisi. In seguito alla terziarizzazione dell'economia italiana e lombarda, Gallarate ha colto il potenziale offerto dal vicinissimo aeroporto della Malpensa, trasformandosi così in un centro terziario e commerciale di crescente importanza. La città sta potenziando le proprie infrastrutture e si propone anche come base logistica: a Gallarate, infatti, hanno sede e uffici compagnie aeree, imprese di trasporto su ferro e imprese multinazionali. Nuovi sviluppi per l'economia gallaratese e dell'area di Malpensa sono avvenuti in seguito all'assegnazione di Expo 2015 alla città di Milano: l'esposizione, infatti, ha avuto sede accanto a Fieramilano, collegato con Gallarate.",
+  "wikidata_aziende": [
+   "People",
+   "Cidiverte",
+   "Yamamay",
+   "Fulgor Milano",
+   "Peroni S.p.A.",
+   "One Hour Marketing srl",
+   "ALFA"
+  ],
+  "_complete": true
+ },
+ "rho": {
+  "istat": {
+   "unita_locali": 4509,
+   "anno": "2023",
+   "addetti": 22130,
+   "codice": "015182"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "ENI • deposito di Rho",
+    "Zona Industriale Viale dei Fontanili",
+    "Zona Industriale Via Pregnana",
+    "Terminal Sogemar di Rho",
+    "Insediamento artigianale Franco Sarchi",
+    "Zona Industriale Via Moscova"
+   ],
+   "centri_commerciali_nomi": [
+    "Centro Commerciale Galleria Gandhi",
+    "Centro Commerciale La Stazione",
+    "Rho Center"
+   ]
+  },
+  "wikipedia_economia": "min|Lo stabilimento Muggiani Numerose sono state le industrie e le fabbriche di grandi dimensioni fondate nel territorio rhodense; alcune sono ancora funzionanti, altre sono ormai dismesse e alcune di queste sono riconosciute come monumenti di archeologia industriale. La popolazione di Rho, fino alla fine dell'Ottocento, era assorbita completamente dall'agricoltura che dava lavoro all'80% della popolazione. I primi cambiamenti si ebbero nel 1870 quando la prima grande industria sorse nel rhodense: il Sacchettificio Goglio. Posto nelle immediate vicinanze del Santuario il sacchettificio aprì i battenti con 45 dipendenti per poi arrivare ad averne circa 500. Nel secondo dopoguerra fallì e gli edifici furono smantellati, con l'eccezione di una palazzina uffici, oggi sede del comando della Polizia Municipale. A suo ricordo è stata intitolata una via al fondatore \"Paolo Goglio\". min|sinistra|La sede della Citterio Proprio di fronte al sacchettificio iniziò la sua attività nel 1878 il Salumificio Citterio. Famoso a livello locale, nel 1932 cominciò l'esportazione, affermandosi come uno dei più importanti leader nazionali nella produzione di salumi ed attualmente risultano ancora presenti in tale sede il magazzino e gli uffici amministrativi dell'azienda, mentre la produzione è stata trasferita in altri siti. Nonostante si sia incredibilmente esteso è possibile vedere nella parte prospiciente il complesso, su corso Europa, il primo edificio storico ricoperto di vite canadese. La facciata compare spesso nelle pubblicità televisive. Nel 1904 aprì i battenti nei pressi della stazione ferroviaria il Cotonificio Muggiani, una delle più grandi realtà della filatura del cotone lombarda, giungendo a dar lavoro fino a 1200 operai. Nel 1910 il cotonificio fu assorbito dalla costituita società Unione Manifatture che riuscì ad acquisire il controllo, negli anni d'oro, di diversi opifici sparsi in Nord Italia. A causa della diffusione delle fibre sintetiche, nei primi anni sessanta, l'attività entrò in crisi e i macchinari furono spenti nel 1963. Dopo un lungo periodo di abbandono il sito è stato oggetto di un intervento di recupero e di riconversione ad uso commerciale residenziale, conservando l'edificio principale, monumento dell'archeologia industriale. Nel 1905 venne fondata la Tintoria Bonecchi, la quale raggiunse un notevole sviluppo nel 1932 con macchinari moderni ed efficienti per l'epoca. La stessa avviò uno stabilimento anche in Bulgaria, risultando una delle prime",
+  "wikidata_aziende": [
+   "Carrozzeria Touring Superleggera",
+   "Citterio",
+   "GIVA Group",
+   "Zagato",
+   "Web Novis"
+  ],
+  "_complete": true
+ },
+ "mantova": {
+  "istat": {
+   "unita_locali": 6066,
+   "anno": "2023",
+   "addetti": 25433,
+   "codice": "020030"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Cartiera Burgo",
+    "IES Italiana Energia e Servizi S.p.A.",
+    "Eni Versalis",
+    "Lubiam",
+    "Porto di Mantova Valdaro",
+    "TCF Rosignoli Logistics"
+   ],
+   "centri_commerciali_nomi": [
+    "La Favorita",
+    "Centro SudOvest"
+   ]
+  },
+  "wikipedia_economia": "min|Veduta aerea del polo chimico e Porto Valdaro di Mantova Ricoprono un ruolo importante nell'economia cittadina il commercio al dettaglio e i servizi del terziario. Tra questi ultimi risaltano la testata giornalistica locale \"Gazzetta di Mantova\", considerato il più antico quotidiano d'Italia, e la Banca Agricola Mantovana fondata nel 1871 che, in seguito ad un'Offerta pubblica di acquisto del 1999, è entrata a far parte del gruppo bancario Montepaschi. Il processo di acquisizione si è concluso con la fusione per incorporazione di Banca Agricola Mantovana Spa in Banca Monte dei Paschi di Siena avvenuta il 22 settembre 2008. Dall'anno 2000 opera con sede in Mantova e alcune altre filiali in provincia, la Banca Popolare di Mantova ceduta nel 2008 dal Banco Popolare alla Banca Popolare di Milano. Rilevanti sono le attività connesse all'allevamento e all'agricoltura e alle industrie trasformatrici delle loro produzioni: si parla soprattutto della produzione di burro, formaggio e di salumi (tra cui spicca il Salame mantovano). L'importanza del settore economico primario per l'economia mantovana è dimostrata dalla presenza a Mantova di una delle più importanti borsa merci agricole della Pianura Padana che dal 30 settembre 2010 è sede della Commissione Unica Nazionale dei suini da macello. Il primo ottobre 2006 esordisce a Mantova il primo mercato contadino italiano che anticipò il decreto ministeriale che solo alla fine del 2007 ne regolamenterà l'attività. Nei primi anni del secondo dopoguerra s'insediarono la Cartiera Burgo e industrie chimiche e petrolchimiche. La prima fu la società di raffinamento del petrolio ICIP, diventata successivamente IES Italiana Energia e Servizi s.p.a., che costruita a partire dal 1947 iniziò la produzione il 20 dicembre 1953 ed è stata acquisita nell'anno 2007 dal gruppo ungherese MOL. Importante insediamento chimico è la Versalis del gruppo Eni che continua l'attività dello stabilimento chimico sorto nel 1956 su iniziativa della Edison, proseguita poi sotto altre denominazioni come Montedison, Montedipe e Polimeri Europa. Molto attivi anche il settore dell'abbigliamento, con importanti insediamenti presenti nel territorio comunale della città, Lubiam, Valstar e Corneliani, in particolare specializzati nella moda per uomo, e il settore meccanico dove spiccano la Belleli, passata attraverso una grave crisi negli anni passati, e la SOGEFI, ormai multinazionale attiva nella componentistica per autoveicoli quotata presso la Borsa ",
+  "wikidata_aziende": [
+   "Officine Belleli",
+   "Editoriale Sometti",
+   "Corraini edizioni",
+   "Farmamed",
+   "Territorio Energia Ambiente",
+   "Cartiera Mantovana",
+   "IMMSI",
+   "APAM"
+  ],
+  "_complete": true
+ },
+ "paderno-dugnano": {
+  "istat": {
+   "unita_locali": 3871,
+   "anno": "2023",
+   "addetti": 15090,
+   "codice": "015166"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Area Industriale Serviane",
+    "Auto Demolizione Ferraro",
+    "Stahl",
+    "Centro Operativo Protezione Civile Città Metropolitana di Milano"
+   ],
+   "centri_commerciali_nomi": [
+    "Le Giraffe",
+    "Centro Commerciale Brianza"
+   ]
+  },
+  "wikipedia_economia": "Nel comune si trova la sede operativa della GDE Bertoni, azienda produttrice di trofei, targhe e medaglie, con sede legale a Milano, che nel 1971 vinse il concorso internazionale per la creazione della nuova Coppa del Mondo di calcio che sarebbe andata a sostituire la Coppa Rimet, assegnata al Brasile nel 1970.",
+  "wikidata_aziende": [
+   "CSBNO",
+   "Accomandita Lombarda Essiccatoi Automatici"
+  ],
+  "_complete": true
+ },
+ "lecco": {
+  "istat": {
+   "unita_locali": 5963,
+   "anno": "2023",
+   "addetti": 21522,
+   "codice": "097042"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Fiocchi Munizioni SpA",
+    "Caleotto",
+    "Tecnocap",
+    "Prym Fashion Italia",
+    "LineeLecco"
+   ],
+   "centri_commerciali_nomi": [
+    "Centro Commerciale Meridiana",
+    "Le Piazze"
+   ]
+  },
+  "wikipedia_economia": "min|verticale=1.3|Panorama di Lecco, disegnato da [[Trento Cionini, nel retro della prima banconota italiana da lire dette Manzoni.]] La storia economica di Lecco ha attraversato tre fasi ben distinte: quella serica, quella siderurgica e quella edilizia. Oggi, invece, sviluppate sono l'attività commerciale e l'industria, in particolare metalmeccanica, siderurgica ed elettrotecnica. Lo sviluppo altomedievale della città spiega la particolare forma urbana, costituita da una serie di quartieri poco distanti specializzati originariamente in settori completamente differenti l'uno dall'altro. I quartieri addetti alla produzione serica con filatoi e filande posti lungo la valle del Gerenzone accolsero numerose industrie del ferro, i quartieri agricoli ai piedi del Resegone, il quartiere dei pescatori (Pescarenico), il quartiere militare (Castello) e il Borgo, luogo del mercato e degli scambi sulla riva del lago. # Durante la sua prima fase industriale (Settecento - metà Ottocento) Lecco fu caratterizzata dalla presenza di attività di pesca e numerose filande per la produzione serica. Esse rappresentavano praticamente la totalità delle attività industriali di tutto il lecchese. Dopo la metà del XIX secolo si ha un veloce declino della lavorazione della seta. Rimangono a Lecco alcuni edifici ex filande, poi trasformate a uso residenziale. # Durante la seconda fase industriale (fine Ottocento - metà del Novecento) Lecco diviene una delle prime città industriali d'Italia con il sorgere sul suo territorio di numerose acciaierie e una quantità elevata di industrie utilizzanti il ferro per i più diversi scopi. Molte aree allora periferiche furono urbanizzate con capannoni di grandi dimensioni, colmando gradualmente il territorio della conca tra il lago e i monti, storicamente insediata in piccoli paesi isolati intorno alla \"Lecco murata\". # Nella seconda metà del Novecento le crisi delle grandi industrie italiane causarono l'inizio di un rapido processo di smantellamento delle principali acciaierie cittadine, e con esso l'avvento di una terza fase in cui Lecco trova la sua ricchezza nel settore terziario, nel turismo e nell'esplosione dell'edilizia. Delle antiche e gloriose fabbriche seriche non ne sopravvive neanche una, delle acciaierie, invece, sopravvive solo l'Arlenico che nel 1996 passò la proprietà sotto il controllo del gruppo Lucchini Piombino spa per poi essere rilevata e rilanciata nel 2015 dalla Feralpi Group, uno deu più importanti produttori di acciaio d'E",
+  "wikidata_aziende": [
+   "Aqvagold",
+   "Fiocchi Munizioni",
+   "Radio Marconi",
+   "ASST Lecco",
+   "Lecco Trasporti"
+  ],
+  "_complete": true
+ },
+ "cologno-monzese": {
+  "istat": {
+   "unita_locali": 3790,
+   "anno": "2023",
+   "addetti": 18716,
+   "codice": "015081"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Inceneritore CORE",
+    "Dianos"
+   ],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "",
+  "wikidata_aziende": [
+   "Radio Italia",
+   "Ultrasuoni S.r.l.",
+   "Baraonda Edizioni Musicali",
+   "Centro Studi Industriali",
+   "Verti",
+   "MFE - MediaForEurope",
+   "Stradivarius"
+  ],
+  "_complete": true
+ },
+ "lissone": {
+  "istat": {
+   "codice": "015123"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Brugola OEB Industriale Spa",
+    "Arpa Industriale Spa",
+    "Cleaf S.p.a.",
+    "Birel Art",
+    "Brianzacque"
+   ],
+   "centri_commerciali_nomi": [
+    "Centro Commerciale Esselunga di Lissone"
+   ]
+  },
+  "wikipedia_economia": "thumb|upright=0.7|Attrezzi da falegnameria manuali L'economia è basata essenzialmente sul settore industriale, commerciale, artigianale e di consulenza fra cui quella finanziaria. Rilevante è la produzione di mobili, principale attività industriale del comune. Vi sono anche industrie meccaniche - in particolare le Officine Brugola, fondate nel 1926, il cui prodotto tipico sono le viti brugola, conosciute con questo nome in tutto il mondo -, elettrochimiche, chimiche, alimentari ed elettroniche. Alcune delle attività produttive svolte a Lissone hanno comportato controlli con impianti radiologici per industrie e conseguente competenza radioprotezionistica. Nel primo dopoguerra la produzione artigianale di mobili di Lissone, sempre alla ricerca di nuovi sbocchi, accolse l'invito del movimento razionalista; architetti ed arredatori di quella scuola trovarono localmente chi realizzò in modo ineccepibile le loro idee e la Triennale di Milano del 1933 ne fu il vittorioso collaudo. Dai prototipi su disegno alla produzione per tutti, adattabile per precise ragioni di produzione o di gusto, si passò poi ad arredamenti di palazzi pubblici, cinematografi, pezzi unici per case private. Il compito promozionale fu assunto da una manifestazione, la Settimana del Mobile, organizzata inizialmente da un sodalizio privato, e dal 1951 in avanti dall'Ente Comunale per il potenziamento del mercato mobiliero. Non meno importante annotazione, la fondazione nel 1955 dell'Istituto Professionale di Stato per l'Industria e l'Artigianato \"G. Meroni\", che sostituendo la vecchia Scuola di disegno ed intaglio si è specializzato nella formazione professionale a vari livelli di mobilieri e di arredatori. Questa vivacità imprenditoriale nel campo dell'arredo, pur continuando a rappresentare un caso di successo della piccola e media impresa italiana, ha subito dal 1990 un rallentamento, dovuto principalmente ad una minor attenzione dedicata all'aspetto creativo e progettuale dell'arredo col risultato che Lissone attraversò un momento di stagflazione, nonostante le numerose, ed uniche a livello nazionale, professionalità e capacità esistenti sul suo territorio. miniatura|Stazione di Lissone",
+  "wikidata_aziende": [
+   "EI Towers",
+   "Birel",
+   "Officine Egidio Brugola"
+  ],
+  "_complete": true
+ },
+ "seregno": {
+  "istat": {
+   "codice": "015208"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Italsilva",
+    "Gelsia",
+    "Gieffe"
+   ],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "Seregno ha sempre avuto una vocazione a livello industriale, commerciale e artigianale, essendo crocevia per varie province e per la vicinanza al territorio elvetico. Nel XX secolo erano in attività molte trance sul territorio comunale, segno che la produzione del mobile era fiorente e di ottima qualità, ma con il passare del tempo al legno si sono sostituiti i prodotti tessili, chimici, meccanici, elettronici, informatici e della lavorazione della gomma. .",
+  "wikidata_aziende": [
+   "Dell'Orto",
+   "Imatecno",
+   "Idrodepurazione"
+  ],
+  "_complete": true
+ },
+ "lodi": {
+  "istat": {
+   "unita_locali": 4457,
+   "anno": "2023",
+   "addetti": 17609,
+   "codice": "098031"
+  },
+  "osm": {
+   "zone_industriali_nomi": [],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "thumb|Una [[cascina a corte|cascina situata alle porte della città]] L'agricoltura e l'allevamento sono di fondamentale importanza per Lodi e per il suo territorio fin dal Medioevo. A testimonianza di quanto il settore primario sia tuttora significativo, i dati riferiscono di aziende nel territorio della provincia che producono soprattutto mais (47% della superficie agricola utilizzata) e foraggi (24% della SAU). Per quanto riguarda il territorio comunale, sono attive invece 84 aziende e la superficie agricola utile è costituita da , dei quali il 48% coltivati a mais; sono presenti inoltre capi bovini e capi suini. Per garantire e promuovere le eccellenze del settore, oltre che tutelare l'ambiente, il benessere degli animali e la salute dei consumatori, nel 2004 fu fondato il comitato del marchio «Lodigiano Terra Buona». I primi stabilimenti industriali nati a Lodi erano legati alla trasformazione dei prodotti del settore primario: il Lanificio Varesi (1868), la Polenghi Lombardo che fu la prima azienda in Italia a trattare a ciclo completo il latte (1870), le Officine Sordi che costruivano macchine per il settore lattiero-caseario (1881), il Linificio Canapificio Nazionale (1909), che nel 1994 vi trasferì il proprio centro mondiale per la costruzione di trasformatori, di interruttori per l'alta tensione e di sottostazioni elettriche. miniatura|sinistra|Il Lodigiano è una delle aree di produzione del [[Grana Padano]] Nel 1944 si cominciò a estrarre il gas metano dai pozzi della vicina Caviaga e a sperimentarne le applicazioni nel locale centro studi dell'Agip. Il cane a sei zampe, logo della compagnia, sarebbe ispirato al fantastico drago Tarantasio che avrebbe infestato il lago Gerundo: quando fu scoperto il metano in quelle zone, infatti, si immaginò che l'animale, un tempo guardiano delle paludi e poi scomparso sotto terra dopo la loro bonifica, fosse riapparso in forma di gas. Lodi fu la prima città in Italia a servirsi del metano per usi domestici e industriali. Sempre nell'ambito dell'industria petrolchimica, dal 1963 ha sede a Lodi la Itelyum, che si occupa di riciclaggio di oli lubrificanti usati attraverso un processo di ri-raffinazione. Nel 2007 il fatturato è stato di 100 milioni di euro e l'azienda impiegava 170 dipendenti. Al confine del territorio municipale di Lodi, in un'area di competenza dei comuni di Montanaso Lombardo e Tavazzano con Villavesco, sorge una grande centrale termoelettrica di proprietà della EPH, alimentata a gas naturale. ",
+  "wikidata_aziende": [
+   "L’Erbolario",
+   "PHARM",
+   "IBSA Farmaceutici",
+   "DNC Entertainment",
+   "Azienda Socio Sanitaria Territoriale di Lodi"
+  ],
+  "_complete": true
+ },
+ "desio": {
+  "istat": {
+   "unita_locali": 3734,
+   "anno": "2023",
+   "addetti": 13475,
+   "codice": "108023"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Retipiù",
+    "Arienti autogru",
+    "Gelsia Ambiente",
+    "Centro Operativo e Addestramento di Protezione Civile Monza Bianza",
+    "Beton team",
+    "Wilbra"
+   ],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "Fin dagli inizi del XX secolo Desio ha sviluppato un notevole comparto industriale, è un centro industriale del tessile, con il Lanificio Targetti, lo Stabilimento del Porta, poi divenuto Gavazzi, per la seta, il cotonificio Tessitura di Desio (Pallavicini). È sede del Gruppo Banco di Desio. Ha ospitato anche l'Autobianchi, entrata successivamente nell'orbita della Fiat.",
+  "wikidata_aziende": [
+   "Magnafon",
+   "Mauri (azienda)",
+   "Banco Desio"
+  ],
+  "_complete": true
+ },
+ "rozzano": {
+  "istat": {
+   "unita_locali": 2914,
+   "anno": "2023",
+   "addetti": 18291,
+   "codice": "015189"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Novelis Italia SRL",
+    "Amiacque",
+    "REMI Rozzano",
+    "Centrale di Teleriscaldamento Monte Amiata"
+   ],
+   "centri_commerciali_nomi": [
+    "Centro commerciale Fiordaliso"
+   ]
+  },
+  "wikipedia_economia": "",
+  "wikidata_aziende": [
+   "Tecnomat",
+   "Spizzico",
+   "Tecnocasa",
+   "Bricocenter",
+   "Editoriale Domus",
+   "Lusofarmaco",
+   "Autogrill"
+  ],
+  "_complete": true
+ },
+ "cantu": {
+  "istat": {
+   "unita_locali": 4384,
+   "anno": "2023",
+   "addetti": 14012,
+   "codice": "013041"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Bragotto & Urbinati",
+    "Bartolomeo Antonio"
+   ],
+   "centri_commerciali_nomi": [
+    "Cantù 2000",
+    "Centro commerciale Mirabello - Ipercoop"
+   ]
+  },
+  "wikipedia_economia": "miniatura|Cascina di Santa Naga, nella frazione [[Fecchio]] L'economia canturina era tradizionalmente basata sull'industria. Il fattore principale e il più appreso era quello della produzione artistica del mobile e del pizzo che rendeva Cantù una cittadina famosa. L'avvento della grande e media distribuzione commerciale (emblematica l'incredibile concentrazione di spazi commerciali su via Milano) ha ribaltato i caratteri territoriali identitari storici, spostando sulle direttrici stradali una maggiore densità edilizia senza oggettiva qualità. Anche per le differenti modalità commerciali in uso, il centro storico si è di fatto svuotato, perdendo molta forza e capacità attrattiva, differentemente da analoghi centri della Lombardia (quali Saronno o Seregno) che hanno saputo gestire i cambiamenti del commercio con maggiore efficacia. Un altro settore artigianale importante è la lavorazione del pizzo di Cantù.",
+  "wikidata_aziende": [
+   "OAK",
+   "Brico OK",
+   "Studio Legale BCS"
+  ],
+  "_complete": true
+ },
+ "san-giuliano-milanese": {
+  "istat": {
+   "unita_locali": 3014,
+   "anno": "2023",
+   "addetti": 17083,
+   "codice": "015195"
+  },
+  "osm": {
+   "zone_industriali_nomi": [],
+   "centri_commerciali_nomi": [
+    "Fashion City Outlet",
+    "Le cupole",
+    "Gran Casa",
+    "Ottimax"
+   ]
+  },
+  "wikipedia_economia": "",
+  "wikidata_aziende": [
+   "La Pavoni"
+  ],
+  "_complete": true
+ },
+ "cesano-maderno": {
+  "istat": {
+   "codice": "015075"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Giussani laterizi",
+    "Europass"
+   ],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "",
+  "wikidata_aziende": [],
+  "_complete": true
+ },
+ "voghera": {
+  "istat": {
+   "unita_locali": 3216,
+   "anno": "2023",
+   "addetti": 10982,
+   "codice": "018182"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Voghera",
+    "Scalo Merci - Voghera",
+    "ASM Voghera - Deposito Automezzi",
+    "Molini di Voghera",
+    "Zona Industriale Campoferro",
+    "Area ex-Cartiera di Voghera"
+   ],
+   "centri_commerciali_nomi": [
+    "Voghera Est Shopping Park",
+    "Montebello"
+   ]
+  },
+  "wikipedia_economia": "Sono molto diffuse e rinomate la produzione artigianale di attrezzi agricoli e la lavorazione del metallo.",
+  "wikidata_aziende": [],
+  "_complete": true
+ },
+ "saronno": {
+  "istat": {
+   "unita_locali": 4122,
+   "anno": "2023",
+   "addetti": 13520,
+   "codice": "012119"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Zona Industriale Via Como",
+    "ADR",
+    "Zona Artigianale",
+    "Deposito FNMA di Saronno",
+    "Deposito STIE di Saronno"
+   ],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "miniatura miniatura|Lo storico ingresso della FIMI (Ex. FIMI Phonola) miniatura|La riserva idrica antincendio della FIMI, meglio conosciuta come \"Fungo\" Del passato industriale, ormai quasi completamente estinto e in buona parte documentato dalla collezione del Museo delle Industrie e del Lavoro del Saronnese, sono degni di nota gli stabilimenti della Isotta Fraschini (multinazionale dei motori per aerei, treni, barche e macchinari vari) e della Lazzaroni (biscotti). Delle ultime due attività i marchi sono ancora utilizzati, ma la produzione è stata spostata in altre sedi. Un'azienda storica che rimane nel saronnese è la ILLVA Saronno, che produce il noto \"Amaretto di Saronno\" (ora commercializzato con la marca \"DiSaronno\"), e altri marchi italiani come \"Artic vodka\" e \"Rabarbaro Zucca\". Produce anche diversi vini siciliani come il \"Marsala Florio\" e i vini \"Corvo\" oltre ad altre attività anche al di fuori del settore vini e superalcolici. Altra storica (1927) azienda presente sul territorio è la FIMI ex Phonola di Saronno, un tempo parte del gruppo Philips, poi acquisita dal gruppo Barco, e si occupa della produzione e progettazione di monitor per l'utilizzo medicale che vengono esportati in tutto il mondo.",
+  "wikidata_aziende": [
+   "Tourlé",
+   "FIMI",
+   "Padre Monti",
+   "ILLVA Saronno",
+   "Paolo Lazzaroni & Figli"
+  ],
+  "_complete": true
+ },
+ "segrate": {
+  "istat": {
+   "unita_locali": 3757,
+   "anno": "2023",
+   "addetti": 26914,
+   "codice": "015205"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Trafiltubi",
+    "Magazzini Città metropolitana di Milano",
+    "Manufatto Forlanini 4 M4",
+    "Centro Intermodale Milano"
+   ],
+   "centri_commerciali_nomi": [
+    "Westfield Milano",
+    "Segrate Outlet"
+   ]
+  },
+  "wikipedia_economia": "",
+  "wikidata_aziende": [
+   "Mondadori",
+   "Edizioni Piemme",
+   "Frassinelli",
+   "Lorenz Watches"
+  ],
+  "_complete": true
+ },
+ "bollate": {
+  "istat": {
+   "unita_locali": 2747,
+   "anno": "2023",
+   "addetti": 8882,
+   "codice": "015027"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Zona Industriale Arese Sud",
+    "Forgia di Bollate",
+    "CSI SpA",
+    "Solvay Specialty Polymers",
+    "Stabilimento Pirelli Bollate",
+    "Omnia Impianti"
+   ],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "",
+  "wikidata_aziende": [
+   "SOLVAY SPECIALTY POLYMERS ITALY S.P.A.",
+   "Solvay (Italy)"
+  ],
+  "_complete": true
+ },
+ "pioltello": {
+  "istat": {
+   "unita_locali": 2103,
+   "anno": "2023",
+   "addetti": 10419,
+   "codice": "015175"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Deposito Esselunga Pioltello Limito"
+   ],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "A Pioltello hanno la sede principale due grandi imprese: Esselunga (Via Giambologna 1) e la filiale italiana di 3M. Nel settore dell'artigianato è molto diffusa e rinomata la lavorazione del ferro battuto finalizzata agli edifici pubblici.",
+  "wikidata_aziende": [],
+  "_complete": true
+ },
+ "brugherio": {
+  "istat": {
+   "codice": "015034"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Candy Hoover Group Srl (Haier Europe headquarters)",
+    "Gruppo edile MADE",
+    "Ex-cementificio",
+    "Microtecnica (ex-Magnaghi)",
+    "Cartaria Monzese",
+    "SMC ITALIA S.p.A."
+   ],
+   "centri_commerciali_nomi": [
+    "Centro Commerciale Kennedy"
+   ]
+  },
+  "wikipedia_economia": "min|Il complesso architettonico in foto ospitava, tra XIX e XX secolo, la filanda di Baraggia.|alt= L'agricoltura fu l'attività principale dei brugheresi fino ai primi decenni del XIX secolo, quando i primi impianti industriali si installarono sul territorio comunale. L'attività agricola, inquadrata all'interno dell'economia capitalista agraria ereditata dall'intraprendenza dell'aristocrazia lombarda del XVIII secolo, prevedeva soprattutto la coltivazione di grano, orzo, frumento e altri prodotti di sussistenza da un lato, e dall'altro della bachicoltura, da cui si ottenevano prodotti come seta e affini. Il settore agricolo, fortemente ridimensionato nella prima metà del '900 con lo sviluppo artigianale prima e industriale poi (seguito dall'indebolimento della classe aristocratico-borghese che impediva ai contadini di avviarsi al lavoro in fabbrica), lo rendeva nel 1986 «un ambito marginale della vita economica e produttiva di Brugherio». Tra il XVIII secolo e gli anni '20/'30 del secolo scorso, proliferarono in gran numero sul territorio brianzolo botteghe dedite all'arte della bachicoltura, rendendo tale attività artigianale uno dei cavalli di battaglia delle comunità lombarde nella prima metà del XIX secolo, così come l'installazione di numerosi cappellifici, setifici e opifici nella vicina Monza. L'attività della bachicoltura era fondamentale per Brugherio e per il territorio brianteo, come testimonia l'imponente diffusione del gelso. Secondo Carlo Czoernig, «nel 1835 il numero dei gelsi esistenti nel territorio dei distretti briantei sarebbe stato di circa 2 milioni e ottocentomila». Dopo un allentamento della produzione dovuta ad un'epidemia che colpì i bozzoli nel 1855 circa. La seta ricavata era poi lavorata finemente nelle varie filande che costellevano il centro di Brugherio all'alba del XX secolo. L'attività serica entrò definitivamente in crisi a partire dagli anni '20/'30, a causa della crisi del settore e dell'imporsi dell'industrializzazione, spegnendosi definitivamente dopo la seconda guerra mondiale. Il resto della popolazione non dedita alla bachicoltura era invece occupata in altri settori artigianali quali la falegnameria, le officine da fabbro e le serramenta. Una prima fase di industrializzazione di Brugherio si ebbe già sotto il periodo fascista. L'installarsi delle ditte Pirelli, Gibellini, Marzotto e Rista determinò l'inglobamento di moltissimi brugheresi, sia uomini che donne, nel personale operaio di queste grandi aziende, determ",
+  "wikidata_aziende": [
+   "Candy",
+   "Fdt Depuratori d' Acqua",
+   "Idronaut"
+  ],
+  "_complete": true
+ },
+ "cernusco-sul-naviglio": {
+  "istat": {
+   "unita_locali": 3312,
+   "anno": "2023",
+   "addetti": 16685,
+   "codice": "015070"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Zona Industriale Bussero",
+    "Zona Industriale Nord",
+    "Zona Industriale Cassina de' Pecchi - Vignate",
+    "Cortilia"
+   ],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "",
+  "wikidata_aziende": [
+   "Arexons",
+   "Ali Group",
+   "HP Italia",
+   "TBX Agency",
+   "Forever Bambù"
+  ],
+  "_complete": true
+ },
+ "limbiate": {
+  "istat": {
+   "unita_locali": 2252,
+   "anno": "2023",
+   "addetti": 7034,
+   "codice": "108027"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Sacma"
+   ],
+   "centri_commerciali_nomi": [
+    "Centro Commerciale Carrefour di Limbiate"
+   ]
+  },
+  "wikipedia_economia": "",
+  "wikidata_aziende": [],
+  "_complete": true
+ },
+ "corsico": {
+  "istat": {
+   "unita_locali": 2480,
+   "anno": "2023",
+   "addetti": 10985,
+   "codice": "015093"
+  },
+  "osm": {
+   "zone_industriali_nomi": [],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "",
+  "wikidata_aziende": [
+   "Comdata Group",
+   "Fontana Arte"
+  ],
+  "_complete": true
+ },
+ "crema": {
+  "istat": {
+   "unita_locali": 3954,
+   "anno": "2023",
+   "addetti": 14107,
+   "codice": "019035"
+  },
+  "osm": {
+   "zone_industriali_nomi": [],
+   "centri_commerciali_nomi": [
+    "Ipercoop Gran Rondò"
+   ]
+  },
+  "wikipedia_economia": "",
+  "wikidata_aziende": [
+   "ASST Crema"
+  ],
+  "_complete": true
+ },
+ "abbiategrasso": {
+  "istat": {
+   "unita_locali": 2530,
+   "anno": "2023",
+   "addetti": 8166,
+   "codice": "015002"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Area Industriale Mendosio",
+    "Mivar",
+    "Ex Area industriale Siltal",
+    "Stav",
+    "Centrale TIM Abbiategrasso",
+    "Cooperativa Arte Edile"
+   ],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "Ad Abbiategrasso nel 2021 risultava occupato il 92% dei residenti in età lavorativa. La città di Abbiategrasso si è qualificata nel tempo come centro agricolo-industriale del sud-ovest del milanese. Nel comune si denotano attività legate a tutti i settori produttivi: primario (cerealicultura, con particolare prevalenza per riso e mais), secondario (industrie alimentari, tessili, meccaniche ed elettroniche di una certa notorietà vi hanno stabilimenti o sedi) e terziario. Ad Abbiategrasso hanno sede la Mivar, storica azienda costruttrice di televisori, e il Gruppo BCS, realtà nel settore delle macchine agricole.",
+  "wikidata_aziende": [
+   "Ferrari",
+   "Bolva",
+   "Pasquali",
+   "Pasquali Macchine Agricole",
+   "BCS (azienda)",
+   "BCS Group",
+   "Mivar"
+  ],
+  "_complete": true
+ },
+ "san-donato-milanese": {
+  "istat": {
+   "unita_locali": 2541,
+   "anno": "2023",
+   "addetti": 24913,
+   "codice": "015192"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Centrale di cogenerazione di Bolgiano"
+   ],
+   "centri_commerciali_nomi": []
+  },
+  "wikipedia_economia": "miniatura|[[V Palazzo Uffici dell'ENI e sede della divisione E&P (Exploration & Production) di R. Gabetti, A. Isola, G. Drocco. (2013)]] miniatura|destra|Il Palazzo BMW progettato da [[Kenzō Tange]] San Donato Milanese è la principale sede operativa dell'Eni (situata a Metanopoli, frazione di San Donato costruita per volere di Enrico Mattei nel 1952), la società controllata dal MEF che svolge attività di ricerca, produzione, trasporto, trasformazione e commercializzazione di idrocarburi, nonché delle più importanti società del gruppo Eni, tra cui: * EniPower (generazione di energia elettrica); * Versalis (petrolchimica); * Eni Corporate University (selezione e formazione risorse umane); *Eni Plenitude (vendita e commercializzazione di gas ed energia elettrica); *EniProgetti (Ingegneria); * Eni Rewind (Chimica di base). San Donato Milanese è la sede di altre importanti società, quali: *BMW Group Italia (automotive) *Cerved Information Solutions (servizi di informazione); *Saipem (costruzione di piattaforme, posa condotte, perforazioni, società quotata in borsa); *Snam (trasporto e dispacciamento del gas naturale); *Stoccaggi Gas Italia (Stoccaggio e modulazione di gas naturale);",
+  "wikidata_aziende": [
+   "Gnl Italia",
+   "Eni Rewind",
+   "Eni",
+   "Eisai",
+   "Eni Corporate University",
+   "EniPower",
+   "STOGIT",
+   "Versalis"
+  ],
+  "_complete": true
+ },
+ "treviglio": {
+  "istat": {
+   "unita_locali": 3256,
+   "anno": "2023",
+   "addetti": 13909,
+   "codice": "016219"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Corden Pharma",
+    "Industrie Chimiche Ingegner Bonelli"
+   ],
+   "centri_commerciali_nomi": [
+    "Centro Commerciale Treviglio"
+   ]
+  },
+  "wikipedia_economia": "Le attività economiche sono da sempre un punto di forza della città che già dal 1081 denominata Trivillium Grassum da un diploma imperiale di Enrico IV proprio a causa della sua prosperità. Era in quanto comune libero esente da tasse fino al 1815, nonostante subisse le continue scorribande di eserciti stranieri in zona che ne imponevano di straordinarie. Il modello economico di Treviglio è cambiato negli anni, in particolare nel secondo dopoguerra, passando da prevalentemente agricolo-artigianale a industriale fino a vedere dopo gli anni novanta la crescita del settore terziario. Tra le imprese che, per la loro dimensione, svolsero un ruolo chiave in questo processo abbiamo la Baslini e la SAME. sinistra|min|La campagna trevigliese d'autunno con le balle di fieno Il suolo di Treviglio non era in origine particolarmente favorevole all'agricoltura, in quanto arido e ghiaioso, ma tramite la canalizzazione dei vicini fiumi a partire dal Medioevo la situazione è notevolmente migliorata. Le rogge Moschetta e Vignola sono infatti state derivate dal fiume Brembo a Brembate, dove si trova la casa del custode delle acque, mentre la roggia Vailata è derivata dall'Adda presso Fara Gera d'Adda. Le prime due scorrono a nord del comune mentre la terza scorre anch'essa nella sezione occidentale del territorio comunale. Ben poco resta dei gelsi che in passato fecero prosperare il settore tessile cittadino, tuttavia qualche esemplare è ancora presente all'interno del parco del Roccolo. In passato erano attive cave di materiali ghiaiosi tra le quali quella della Vailata vicino alla strada per Casirate d'Adda. Tra i prodotti di artigianato legati al territorio abbiamo i mobili d'arte molto diffusi qui come anche nel circondario, inoltre in passato vi erano prodotti nei pressi dell'attuale viale Filagno filati di pregiata qualità tanto che scene del guado dell'Adda di Cassano sono rappresentate in alcuni filati del tesoro del duomo di Monza. min|Lo stabilimento della Bianchi biciclette A Treviglio hanno sede numerose industrie che beneficiano di ottimi collegamenti stradali e ferroviari. La più importante è il gruppo SAME Deutz-Fahr, quarto produttore al mondo di trattori e primo in Europa (fanno parte del gruppo i marchi SAME, Lamborghini, Hürlimann e Deutz-Fahr). Per questo è anche conosciuta come \"la città dei trattori\", produttrice di biciclette. Dal 2006 si è insediata nella zona PIP 1 la tipografia Eurogravure, facente parte di un gruppo di imprese Arvato, controllato da",
+  "wikidata_aziende": [
+   "SAME Deutz-Fahr",
+   "F.I.V. Edoardo Bianchi",
+   "ASST Bergamo Ovest"
+  ],
+  "_complete": true
+ },
+ "sondrio": {
+  "istat": {
+   "unita_locali": 2537,
+   "anno": "2023",
+   "addetti": 9041,
+   "codice": "014061"
+  },
+  "osm": {
+   "zone_industriali_nomi": [
+    "Centrale idroelettrica di Sondrio",
+    "AREA Ex Enel",
+    "Zona Artigianale - Commerciale di Castione Andevenno",
+    "Cucina Centralizzata Comune di Sondrio"
+   ],
+   "centri_commerciali_nomi": [
+    "La Garberia",
+    "Iperal Sondrio",
+    "La piastra"
+   ]
+  },
+  "wikipedia_economia": "",
+  "wikidata_aziende": [
+   "Banca Popolare di Sondrio",
+   "ASST della Valtellina e dell'Alto Lario",
+   "Ghelfi Ondulati"
+  ],
+  "_complete": true
+ }
+}

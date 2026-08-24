@@ -126,7 +126,7 @@
                 <span>{{ city.name }}</span>
             </nav>
             <h1>{{ h1_text|safe }}</h1>
-            <p class="hero-subtitle">Installazione pensiline fotovoltaiche per parcheggi aziendali a {{ city.name }}{% if province_normalized %}, {{ province_normalized }}{% endif %}</p>
+            <p class="hero-subtitle">{{ hero_subtitle }}</p>
             <a href="{{ company.rdv_url }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Calcola il tuo preventivo</a>
         </div>
     </section>
@@ -137,25 +137,9 @@
             <div class="grid-2">
                 <div>
                     <h2>Pensiline Fotovoltaiche per Aziende e PMI a {{ city.name }}</h2>
-                    <p>
-                        <strong>Rossini Energy</strong> installa <strong>pensiline fotovoltaiche per parcheggi aziendali a {{ city.name }}</strong>{% if province_normalized %} ({{ province_normalized }}){% endif %}:
-                        sopralluogo gratuito, progettazione e cantiere chiavi in mano in 8-12 settimane.
-                    </p>
-                    <p>
-                        La soluzione si basa sulle <a href="https://rossinienergy.it/pensilina-fotovoltaica-in-legno/">pensiline fotovoltaiche TOSSO® in legno</a>:
-                        struttura in legno Douglas, pannelli fotovoltaici bifacciali e punti di ricarica integrati direttamente nella tettoia.
-                    </p>
-                    {% if solar_annual %}
-                    <p>
-                        A {{ city.name }} un impianto da 30 kWp produce circa <strong>{{ solar_annual }} kWh all'anno</strong> (dati PVGIS),
-                        con un risparmio stimato di <strong>8.000-9.000 € l'anno</strong> sulla bolletta energetica.{% if industrial_zones > 0 %}
-                        Il territorio conta {{ industrial_zones }} zone industriali censite, con parcheggi aziendali adatti a ospitare un impianto.{% endif %}
-                    </p>
-                    {% endif %}
-                    <p>
-                        I vantaggi per la tua azienda: autoconsumo dell'energia solare, riduzione dei costi energetici,
-                        protezione dei veicoli e accesso agli incentivi fiscali per le imprese (iperammortamento).
-                    </p>
+                    <p>{{ intro_p1|safe }}</p>
+                    <p>{{ intro_p2|safe }}</p>
+                    <p>{{ benefits|safe }}</p>
                 </div>
                 <div class="info-card">
                     <h3>📊 {{ city.name }} in cifre</h3>
@@ -172,6 +156,18 @@
                             <dd>{{ province_normalized }}</dd>
                         </div>
                         {% endif %}
+                        {% if intel.istat and intel.istat.unita_locali %}
+                        <div class="stat-row">
+                            <dt>Unità locali attive</dt>
+                            <dd>{{ "{:,}".format(intel.istat.unita_locali).replace(",", ".") }}</dd>
+                        </div>
+                        {% endif %}
+                        {% if intel.istat and intel.istat.addetti %}
+                        <div class="stat-row">
+                            <dt>Addetti</dt>
+                            <dd>{{ "{:,}".format(intel.istat.addetti).replace(",", ".") }}</dd>
+                        </div>
+                        {% endif %}
                         {% if city.area_km2 %}
                         <div class="stat-row">
                             <dt>Superficie</dt>
@@ -184,10 +180,6 @@
                             <dd>{{ "{:,.0f}".format(city.solar.irradiation_kwh_m2).replace(",", ".") }} kWh/m²</dd>
                         </div>
                         {% endif %}
-                        <div class="stat-row">
-                            <dt>Regione</dt>
-                            <dd>Lombardia</dd>
-                        </div>
                     </dl>
                 </div>
             </div>
@@ -199,37 +191,34 @@
         <div class="container">
             <h2>I nostri servizi a {{ city.name }}</h2>
             <div class="grid-3">
+                {% for icon, title, text in services %}
                 <div class="service-card">
-                    <div class="service-icon">☀️</div>
-                    <h3>Pensiline Fotovoltaiche TOSSO®</h3>
-                    <p>Tettoie per parcheggi aziendali con pannelli fotovoltaici bifacciali, struttura in legno Douglas sostenibile. Producono energia solare e proteggono i veicoli.</p>
+                    <div class="service-icon">{{ icon }}</div>
+                    <h3>{{ title }}</h3>
+                    <p>{{ text }}</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🔑</div>
-                    <h3>Servizio Chiavi in Mano</h3>
-                    <p>Sopralluogo, progettazione, pratiche edilizie (CILA), installazione e allaccio alla rete: gestiamo ogni fase, dalla firma all'attivazione in 8-12 settimane.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h3>Software di Gestione Energia</h3>
-                    <p>Piattaforma di pilotaggio dinamico per ottimizzare l'autoconsumo dell'energia solare prodotta e gestire la ricarica dei veicoli elettrici.</p>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
-    <!-- Produzione Solare -->
+    {% macro sec_local(alt) %}
+    {% if local_block %}
+    <section class="section{% if alt %} section-alt{% endif %}">
+        <div class="container">
+            <h2>{{ local_h2 }}</h2>
+            {{ local_block|safe }}
+        </div>
+    </section>
+    {% endif %}
+    {% endmacro %}
+
+    {% macro sec_solar(alt) %}
     {% if city.solar %}
-    <section class="section">
+    <section class="section{% if alt %} section-alt{% endif %}">
         <div class="container">
             <h2>Produzione Solare a {{ city.name }}</h2>
-            <p>
-                Un impianto fotovoltaico da <strong>30 kWp</strong> installato su una pensilina a {{ city.name }}
-                produce circa <strong>{{ "{:,.0f}".format(city.solar.annual_production_kwh).replace(",", ".") }} kWh/anno</strong>
-                secondo i dati del sistema europeo PVGIS.
-                Questo equivale a un <strong>risparmio stimato di 8.000-9.000 € l'anno</strong> sulle bollette energetiche,
-                con un ritorno sull'investimento in 6-8 anni.
-            </p>
+            <p>{{ solar_p|safe }}</p>
             <div class="grid-3">
                 <div class="climate-card">
                     <span class="climate-value">{{ "{:,.0f}".format(city.solar.annual_production_kwh).replace(",", ".") }}</span>
@@ -244,37 +233,23 @@
                     <span class="climate-label">Angolo ottimale pannelli</span>
                 </div>
             </div>
-            {% if solar_month_min %}
-            <p style="margin-top:1.5rem;">
-                La produzione varia durante l'anno: da circa <strong>{{ solar_month_min }} kWh a {{ solar_month_min_name }}</strong>
-                a <strong>{{ solar_month_max }} kWh a {{ solar_month_max_name }}</strong> — un profilo che si sposa bene
-                con i consumi diurni di un'azienda.
-            </p>
+            {% if solar_monthly %}
+            <p style="margin-top:1.5rem;">{{ solar_monthly|safe }}</p>
             {% endif %}
         </div>
     </section>
     {% endif %}
+    {% endmacro %}
 
-    <!-- POIs / Infrastrutture -->
+    {% macro sec_pois(alt) %}
     {% if city.pois and city.pois.ev_charging_stations > 0 %}
-    <section class="section section-alt">
+    <section class="section{% if alt %} section-alt{% endif %}">
         <div class="container">
             <h2>Infrastrutture di Ricarica a {{ city.name }}</h2>
             <div class="grid-2">
                 <div>
-                    <p>
-                        A {{ city.name }} sono attualmente censiti <strong>{{ city.pois.ev_charging_stations }}</strong> punti di ricarica
-                        per veicoli elettrici e <strong>{{ city.pois.parking_count }}</strong> parcheggi pubblici.
-                        {% if city.pois.ev_charging_stations < 10 %}
-                        Il territorio presenta un potenziale significativo per l'espansione della rete di ricarica elettrica.
-                        {% else %}
-                        La domanda di ricarica è in costante crescita e necessita di nuove infrastrutture per soddisfare le esigenze dei cittadini.
-                        {% endif %}
-                    </p>
-                    <p>
-                        Rossini Energy può coprire i parcheggi esistenti di {{ city.name }} con pensiline fotovoltaiche TOSSO®,
-                        trasformandoli in parcheggi solari con punti di ricarica integrati.
-                    </p>
+                    <p>{{ pois_p1|safe }}</p>
+                    <p>{{ pois_p2|safe }}</p>
                 </div>
                 <div class="info-card">
                     <h3>🔋 Stato della ricarica EV</h3>
@@ -293,13 +268,21 @@
         </div>
     </section>
     {% endif %}
+    {% endmacro %}
+
+    {% for sec in section_order %}
+        {% if sec == 'local' %}{{ sec_local(loop.index is divisibleby 2) }}
+        {% elif sec == 'solar' %}{{ sec_solar(loop.index is divisibleby 2) }}
+        {% elif sec == 'pois' %}{{ sec_pois(loop.index is divisibleby 2) }}
+        {% endif %}
+    {% endfor %}
 
     <!-- Villes proches (maillage interne) -->
     {% if nearby_cities %}
     <section class="section">
         <div class="container">
             <h2>Rossini Energy nelle città vicine</h2>
-            <p>Operiamo anche nelle seguenti città della Lombardia vicine a {{ city.name }}:</p>
+            <p>{{ nearby_intro }}</p>
             <div class="nearby-grid">
                 {% for nc in nearby_cities[:8] %}
                 <a href="{{ nc.slug }}.html" class="nearby-card">
@@ -316,11 +299,7 @@
     <section class="section section-cta" id="contatto">
         <div class="container">
             <h2>Trasforma il parcheggio della tua azienda in una fonte di energia</h2>
-            <p>
-                Sei un'azienda o PMI a {{ city.name }} e vuoi ridurre i costi energetici?
-                Installa una pensilina fotovoltaica sul parcheggio aziendale e produci energia pulita.
-                Contattaci per un sopralluogo e preventivo gratuito.
-            </p>
+            <p>{{ cta_p }}</p>
             <div class="cta-buttons">
                 <a href="{{ company.rdv_url }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
                     📅 Fissare un appuntamento
@@ -339,7 +318,7 @@
         </div>
     </section>
 
-    <!-- FAQ spécifique par profil de ville -->
+    <!-- FAQ -->
     <section class="section section-alt">
         <div class="container">
             <h2>Domande Frequenti — Pensiline Fotovoltaiche a {{ city.name }}</h2>
@@ -417,22 +396,6 @@
                 burger.classList.remove('active');
                 body.classList.remove('menu-open');
             }
-        });
-
-        // Submenu toggle for touch devices
-        const menuItemsWithChildren = document.querySelectorAll('.menu-item-has-children > a');
-        menuItemsWithChildren.forEach(function(item) {
-            item.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    const parent = this.parentElement;
-                    parent.classList.toggle('open');
-                    const submenu = parent.querySelector('.sub-menu');
-                    if (submenu) {
-                        submenu.style.display = parent.classList.contains('open') ? 'block' : 'none';
-                    }
-                }
-            });
         });
     });
     </script>

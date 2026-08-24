@@ -8,3 +8,8 @@ output/sitemap.xml
 output/robots.txt
 .DS_Store
 .venv/
+.gstack/
+
+# Données versionnées (fetch one-shot + contenu rédigé — ne pas régénérer)
+!data/local_intel.json
+!data/local_content.json
