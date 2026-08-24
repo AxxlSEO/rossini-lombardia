@@ -54,3 +54,17 @@ MIN_POPULATION = 10000
 DATA_DIR = "data"
 OUTPUT_DIR = "output"
 TEMPLATES_DIR = "templates"
+
+# Réduction du réseau de pages (2026-08-25) : page complète uniquement pour les
+# capoluoghi et les villes >= PAGE_MIN_POPULATION habitants ; les autres URLs
+# existantes deviennent des stubs de redirection (meta refresh + canonical)
+# vers le capoluogo le plus proche — GitHub Pages ne permet pas de 301 serveur.
+PAGE_MIN_POPULATION = 30000
+CAPOLUOGHI_SLUGS = {
+    "milano", "brescia", "bergamo", "monza", "como", "varese",
+    "pavia", "cremona", "mantova", "lecco", "lodi", "sondrio",
+}
+
+
+def keeps_page(city):
+    return city.get("slug") in CAPOLUOGHI_SLUGS or city.get("population", 0) >= PAGE_MIN_POPULATION

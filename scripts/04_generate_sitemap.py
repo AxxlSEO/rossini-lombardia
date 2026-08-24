@@ -24,6 +24,10 @@ def main():
     with open(input_path, "r", encoding="utf-8") as f:
         cities = json.load(f)
 
+    # Seules les villes avec une page complète entrent au sitemap (les stubs
+    # de redirection n'y ont pas leur place)
+    cities = [c for c in cities if keeps_page(c)]
+
     today = datetime.now().strftime("%Y-%m-%d")
 
     urls = []

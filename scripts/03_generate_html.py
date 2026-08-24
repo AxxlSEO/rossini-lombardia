@@ -309,11 +309,20 @@ def main():
     year = datetime.now().year
     os.makedirs(os.path.join(OUTPUT_DIR, "citta"), exist_ok=True)
 
-    # === Générer les pages de chaque ville ===
-    print(f"🏗️ Génération de {len(cities)} pages ville...\n")
+    # === Filtrer : pages complètes vs stubs de redirection ===
+    kept = [c for c in cities if keeps_page(c)]
+    kept_slugs = {c["slug"] for c in kept}
+    dropped = [c for c in cities if c["slug"] not in kept_slugs]
+
+    # === Générer les pages de chaque ville gardée ===
+    # NB : on énumère la liste complète pour préserver l'index i (rotation des
+    # titles/descriptions) et donc la stabilité des pages existantes.
+    print(f"🏗️ Génération de {len(kept)} pages ville (sur {len(cities)})...\n")
 
     for i, city in enumerate(cities):
-        nearby = find_nearby_cities(city, cities)
+        if city["slug"] not in kept_slugs:
+            continue
+        nearby = find_nearby_cities(city, kept)
 
         # Normaliser la province
         province_normalized = normalize_province(city.get("province", ""))
@@ -349,16 +358,46 @@ def main():
 
         print(f"  ✅ {city['name']} → citta/{city['slug']}.html")
 
-    # === Générer la page index ===
+    # === Générer les stubs de redirection pour les villes retirées ===
+    capoluoghi_cities = [c for c in cities if c["slug"] in CAPOLUOGHI_SLUGS]
+    milano = next(c for c in capoluoghi_cities if c["slug"] == "milano")
+
+    def nearest_capoluogo(city):
+        if not city.get("latitude") or not city.get("longitude"):
+            return milano
+        return min(capoluoghi_cities, key=lambda c: haversine_distance(
+            city["latitude"], city["longitude"], c["latitude"], c["longitude"]))
+
+    print(f"\n↪️ Génération de {len(dropped)} stubs de redirection...")
+    for city in dropped:
+        target = nearest_capoluogo(city)
+        target_url = f"{DOMAIN}/citta/{target['slug']}.html"
+        stub = f"""<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <title>Pagina spostata — Pensiline Fotovoltaiche a {target['name']}</title>
+    <meta http-equiv="refresh" content="0; url={target_url}">
+    <link rel="canonical" href="{target_url}">
+</head>
+<body>
+    <p>Questa pagina è stata spostata. <a href="{target_url}">Continua verso {target['name']}</a>.</p>
+</body>
+</html>
+"""
+        with open(os.path.join(OUTPUT_DIR, "citta", f"{city['slug']}.html"), "w", encoding="utf-8") as f:
+            f.write(stub)
+
+    # === Générer la page index (villes gardées uniquement) ===
     provinces = {}
-    for c in cities:
+    for c in kept:
         p = c.get("province", "Altro")
         provinces[p] = provinces.get(p, 0) + 1
     # Trier par nombre de villes
     provinces = dict(sorted(provinces.items(), key=lambda x: -x[1]))
 
     index_html = index_template.render(
-        cities=cities,
+        cities=kept,
         provinces=provinces,
         company=COMPANY,
         domain=DOMAIN,
@@ -380,7 +419,7 @@ Sitemap: {DOMAIN}/sitemap.xml
     print(f"  ✅ robots.txt")
 
     print(f"\n🎉 Site généré avec succès dans /{OUTPUT_DIR}/")
-    print(f"   📄 {len(cities)} pages ville + index + robots.txt")
+    print(f"   📄 {len(kept)} pages ville + {len(dropped)} stubs de redirection + index + robots.txt")
 
 
 if __name__ == "__main__":
