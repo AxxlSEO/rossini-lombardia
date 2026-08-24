@@ -7,3 +7,4 @@ output/index.html
 output/sitemap.xml
 output/robots.txt
 .DS_Store
+.venv/

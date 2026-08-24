@@ -30,7 +30,7 @@ def main():
 
     # Page d'accueil
     urls.append({
-        "loc": f"{DOMAIN}/index.html",
+        "loc": f"{DOMAIN}/",
         "lastmod": today,
         "changefreq": "weekly",
         "priority": "1.0"
